@@ -12,18 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectEventClub">
         <activity
-            android:name=".vista_usuario.ej5"
-            android:exported="false" />
-        <activity
-            android:name=".datos.ej4"
-            android:exported="false" />
-        <activity
-            android:name=".core.ej3"
-            android:exported="false" />
-        <activity
-            android:name=".auth.ej2"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="false" />
             <activity
