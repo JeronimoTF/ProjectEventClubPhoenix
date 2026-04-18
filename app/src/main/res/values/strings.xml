@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">EventClub</string>
+    <string name="txt_welcome">Bienvenido</string>
+    <string name="txt_welcome_msj">Descubre y gestiona eventos inolvidables de forma sencilla</string>
+    <string name="txtBttnComenzar">Comenzar</string>
+    <string name="title_activity_bienvenida">activity_bienvenida</string>
+</resources>

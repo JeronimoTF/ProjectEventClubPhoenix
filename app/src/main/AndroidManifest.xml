@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ProjectEventClub">
+        <activity
+            android:name=".vista_usuario.bienvenida.activity_bienvenida"
+            android:exported="false" />
+        <activity
+            android:name=".core.ej3"
+            android:exported="false" />
+        <activity
+            android:name=".atributos.cumplimientos.aj4"
+            android:exported="false" />
+        <activity
+            android:name=".atributos.comida.ej2"
+            android:exported="false" />
+        <activity
+            android:name=".atributos.experiencia.ej6"
+            android:exported="false" />
+        <activity
+            android:name=".atributos.tickets.ej2"
+            android:exported="false" />
+        <activity
+            android:name=".atributos.eventos.ej2"
+            android:exported="false" />
+        <activity
+            android:name=".atributos.pefil.aj2"
+            android:exported="false" />
+        <activity
+            android:name=".vista_usuario.main.ej1"
+            android:exported="false" />
+        <activity
+            android:name=".vista_usuario.ej1"
+            android:exported="false" />
+        <activity
+            android:name=".vista_usuario.main.ej4"
+            android:exported="false" />
+        <activity
+            android:name=".vista_usuario.main.ej3"
+            android:exported="false" />
+        <activity
+            android:name=".vista_usuario.ej2"
+            android:exported="false" />
+        <activity
+            android:name=".datos.ej1"
+            android:exported="false" />
+        <activity
+            android:name=".atributos.ej1"
+            android:exported="false" />
+        <activity
+            android:name=".auth.ej1"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
