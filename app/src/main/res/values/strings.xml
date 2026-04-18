@@ -4,4 +4,5 @@
     <string name="txt_welcome_msj">Descubre y gestiona eventos inolvidables de forma sencilla</string>
     <string name="txtBttnComenzar">Comenzar</string>
     <string name="title_activity_bienvenida">activity_bienvenida</string>
+    <string name="navbar_txt">EventClub</string>
 </resources>
