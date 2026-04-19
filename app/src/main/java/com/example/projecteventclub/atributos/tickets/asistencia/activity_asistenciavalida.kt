@@ -1,4 +1,4 @@
-package com.example.projecteventclub.atributos.eventos.crear
+package com.example.projecteventclub.atributos.tickets.asistencia
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,10 +14,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [activity_EvenCreado.newInstance] factory method to
+ * Use the [activity_asistenciavalida.newInstance] factory method to
  * create an instance of this fragment.
  */
-class activity_EvenCreado : Fragment() {
+class activity_asistenciavalida : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -35,7 +35,7 @@ class activity_EvenCreado : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.frag_activity__even_creado, container, false)
+        return inflater.inflate(R.layout.fragment_asistenciavalida, container, false)
     }
 
     companion object {
@@ -45,12 +45,12 @@ class activity_EvenCreado : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment activity_EvenCreado.
+         * @return A new instance of fragment activity_asistenciavalida.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            activity_EvenCreado().apply {
+            activity_asistenciavalida().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

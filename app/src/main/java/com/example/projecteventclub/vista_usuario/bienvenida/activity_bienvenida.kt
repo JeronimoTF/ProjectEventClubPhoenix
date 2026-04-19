@@ -7,7 +7,6 @@ import android.os.Looper
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.projecteventclub.R
-import com.example.projecteventclub.vista_usuario.main.admin.activity_main_admin
 
 class activity_bienvenida : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
