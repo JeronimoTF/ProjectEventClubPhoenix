@@ -17,4 +17,12 @@
     <string name="TxtLocEvento">Localizar\nEvento</string>
     <string name="edit_datos_user">Modificar datos</string>
     <string name="logout_user">Cerrar sesión</string>
+    <string name="tv_editdatos">Modificar datos</string>
+    <string name="txt_edithint_name">Nombres</string>
+    <string name="txt_edithint_lastname">Apellidos</string>
+    <string name="txt_edithint_celular">Celular</string>
+    <string name="txt_edithint_typedocument">Tipo de documento</string>
+    <string name="txt_edithint_document">Número de documento</string>
+    <string name="txt_edithint_birhtday">Fecha de nacimiento</string>
+    <string name="txt_edithint_ordenbirthday">DD/MM/AAAA</string>
 </resources>
