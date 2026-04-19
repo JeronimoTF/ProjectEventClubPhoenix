@@ -16,4 +16,7 @@
     <string name="change_correo">Cambiar Correo</string>
     <string name="change_password">Cambiar Contraseña</string>
     <string name="btn_save">Confirmar</string>
+    <string name="txt_change_correo">Dirección de correo electrónico nueva</string>
+    <string name="txt_correoactual_editdatos">Dirección de correo electrónico actual</string>
+    <string name="tv_changecorreo">Cambiar correo electrónico</string>
 </resources>

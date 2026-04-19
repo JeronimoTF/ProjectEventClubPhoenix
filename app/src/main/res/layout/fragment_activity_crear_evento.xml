@@ -220,5 +220,4 @@
             android:src="@android:drawable/checkbox_on_background"
             app:tint="@color/black" />
     </LinearLayout>
-
 </LinearLayout>
