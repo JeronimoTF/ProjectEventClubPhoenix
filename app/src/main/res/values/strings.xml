@@ -15,4 +15,6 @@
     <string name="TxtAgrEvento">Agregar\nEvento</string>
     <string name="TxtEdtEvento">Editar\nEvento</string>
     <string name="TxtLocEvento">Localizar\nEvento</string>
+    <string name="edit_datos_user">Modificar datos</string>
+    <string name="logout_user">Cerrar sesión</string>
 </resources>

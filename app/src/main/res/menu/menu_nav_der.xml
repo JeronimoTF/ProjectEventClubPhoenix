@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/config_user"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:title="@string/edit_datos_user"
+        />
 
+    <item
+        android:id="@+id/logout_user"
+        android:icon="@android:drawable/ic_lock_power_off"
+        android:title="@string/logout_user" />
 </menu>

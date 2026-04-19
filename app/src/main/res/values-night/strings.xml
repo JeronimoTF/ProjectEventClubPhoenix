@@ -3,4 +3,6 @@
     <string name="navbar_txt">EventClub</string>
     <string name="Txt_bienvenido_usuario_administrador">Bienvenido Usuario Administrador</string>
     <string name="TxtAgrEvento">Agregar\nEvento</string>
+    <string name="edit_datos_user">Modificar datos</string>
+    <string name="logout_user">Cerrar sesión</string>
 </resources>
