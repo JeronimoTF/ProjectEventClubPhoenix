@@ -5,4 +5,14 @@
     <string name="txtBttnComenzar">Comenzar</string>
     <string name="title_activity_bienvenida">activity_bienvenida</string>
     <string name="navbar_txt">EventClub</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Txt_bienvenido_usuario_administrador">Bienvenido Usuario Administrador</string>
+    <string name="TxtBieUsuAdm">Bienvenido Usuario Administrador</string>
+    <string name="TxtQDRealizarhoy">¿Qué desea realizar hoy?</string>
+    <string name="TxtRegAsistencia">Registro\nde\nasistencia</string>
+    <string name="TxtConEvento">Consultar\nEvento</string>
+    <string name="TxtAgrEvento">Agregar\nEvento</string>
+    <string name="TxtEdtEvento">Editar\nEvento</string>
+    <string name="TxtLocEvento">Localizar\nEvento</string>
 </resources>

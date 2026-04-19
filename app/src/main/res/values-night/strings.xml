@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="navbar_txt">EventClub</string>
+    <string name="Txt_bienvenido_usuario_administrador">Bienvenido Usuario Administrador</string>
+    <string name="TxtAgrEvento">Agregar\nEvento</string>
 </resources>
