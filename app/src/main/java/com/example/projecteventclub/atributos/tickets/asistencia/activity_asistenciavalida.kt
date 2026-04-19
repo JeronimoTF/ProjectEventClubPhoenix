@@ -35,7 +35,7 @@ class activity_asistenciavalida : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_asistenciavalida, container, false)
+        return inflater.inflate(R.layout.frag_asistance_correct, container, false)
     }
 
     companion object {

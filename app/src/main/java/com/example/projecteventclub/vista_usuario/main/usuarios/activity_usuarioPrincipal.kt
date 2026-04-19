@@ -35,7 +35,7 @@ class activity_usuarioPrincipal : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main_usuario, container, false)
+        return inflater.inflate(R.layout.frag_main_user, container, false)
     }
 
     companion object {

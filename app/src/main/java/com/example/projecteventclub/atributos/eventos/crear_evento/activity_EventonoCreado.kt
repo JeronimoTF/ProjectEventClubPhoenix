@@ -35,7 +35,7 @@ class activity_EventonoCreado : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_eventono_creadoadm, container, false)
+        return inflater.inflate(R.layout.frag_event_no_creado_adm, container, false)
     }
 
     companion object {
