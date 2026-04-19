@@ -25,4 +25,7 @@
     <string name="txt_edithint_document">Número de documento</string>
     <string name="txt_edithint_birhtday">Fecha de nacimiento</string>
     <string name="txt_edithint_ordenbirthday">DD/MM/AAAA</string>
+    <string name="change_correo">Cambiar Correo</string>
+    <string name="change_password">Cambiar Contraseña</string>
+    <string name="btn_save">Confirmar</string>
 </resources>
