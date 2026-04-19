@@ -35,7 +35,7 @@ class activity_EvenCreado : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_activity__even_creado, container, false)
+        return inflater.inflate(R.layout.frag_activity__even_creado, container, false)
     }
 
     companion object {
