@@ -53,4 +53,9 @@
     <string name="comenzar">Comenzar</string>
     <string name="txt_consultevent_localidad">Localidad - zona</string>
     <string name="txt_consultevent_chair">Piso - Silla</string>
+    <string name="txt_consultevent_date">Fecha del evento</string>
+    <string name="txt_name_event">Nombre del evento</string>
+    <string name="txt_evvent_description">Descrpción del evento</string>
+    <string name="txt_event_hour">Hora del evento</string>
+    <string name="txt_event_place">Lugar del evento</string>
 </resources>

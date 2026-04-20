@@ -90,7 +90,8 @@
                 android:layout_marginBottom="15dp"
                 android:background="@drawable/style_edit_txt"
                 android:paddingStart="10dp"
-                android:paddingEnd="10dp" />
+                android:paddingEnd="10dp"
+                android:hint="@string/txt_nameevent_consultevent"/>
 
 
             <!-- Fecha y hora -->
@@ -109,7 +110,8 @@
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/style_edit_txt"
                 android:paddingStart="16dp"
-                android:paddingEnd="16dp" />
+                android:paddingEnd="16dp"
+                android:hint="@string/txt_consultevent_datetime" />
 
             <!-- Descripción -->
             <TextView
@@ -127,7 +129,8 @@
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/style_edit_txt"
                 android:gravity="top"
-                android:padding="12dp" />
+                android:padding="12dp"
+                android:hint="@string/txt_consultevent_descriptionbox" />
 
             <!-- Localidad - zona -->
             <TextView
@@ -145,7 +148,8 @@
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/style_edit_txt"
                 android:paddingStart="16dp"
-                android:paddingEnd="16dp" />
+                android:paddingEnd="16dp"
+                android:hint="@string/txt_consultevent_localidad" />
 
             <!-- Piso - Silla -->
             <TextView
@@ -163,7 +167,8 @@
                 android:layout_marginBottom="32dp"
                 android:background="@drawable/style_edit_txt"
                 android:paddingStart="16dp"
-                android:paddingEnd="16dp" />
+                android:paddingEnd="16dp"
+                android:hint="@string/txt_consultevent_chair"/>
 
         </LinearLayout>
     </ScrollView>
