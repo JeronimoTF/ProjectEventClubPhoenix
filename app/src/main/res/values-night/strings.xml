@@ -89,4 +89,12 @@
     <string name="barrio">Barrio</string>
     <string name="direcci_n">Direcciòn</string>
     <string name="siguiente2">Siguiente</string>
+    <string name="datos_de_ubicacion_del_usuario">Datos de ubicacion del usuario</string>
+    <string name="titulocontrase_a">Contraseña</string>
+    <string name="contrase_ausu">Contraseña</string>
+    <string name="confirmar_contrase_a">Confirmar Contraseña</string>
+    <string name="siguiente3">Crear Ususario</string>
+    <string name="acepta_los_t_rminos_y_condiciones">¿Acepta los términos y condiciones?</string>
+    <string name="usuario_creado_exitosamente">Usuario creado exitosamente</string>
+    <string name="volver_login">Ingresar</string>
 </resources>
