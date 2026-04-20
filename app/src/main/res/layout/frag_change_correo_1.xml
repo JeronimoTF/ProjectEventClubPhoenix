@@ -38,12 +38,21 @@
         android:textColorHint="@color/navbar_background" />
 
     <Button
-        android:layout_width="140dp"
-        android:layout_height="55dp"
+        android:id="@+id/confirm_editchange_correo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="40dp"
         android:text="@string/btn_save"
-        android:textColor="@color/navbar_background"
         android:layout_gravity="center"
-        android:layout_marginTop="20dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/navbar_background"
+        app:icon="@android:drawable/btn_star_big_on"
+        app:iconPadding="8dp"
+        app:iconTint="@color/navbar_background"
+        app:iconGravity="textStart"
         android:background="@drawable/style_buttons"
         app:backgroundTint="@null" />
+
 </LinearLayout>

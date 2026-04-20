@@ -4,12 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:orientation="vertical"
-    >
-
+    android:orientation="vertical">
 
     <RelativeLayout
-
         android:layout_width="match_parent"
         android:layout_height="80dp">
 
@@ -31,7 +28,7 @@
             android:layout_height="60dp"
             android:layout_centerHorizontal="true"
             android:gravity="center"
-            android:text="@string/TxtTitulopedir_comidas"
+            android:text="@string/txt_pedir_comidas"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -94,7 +91,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_weight="1"
-                    android:text="@string/Txtcomida_mc_donald_s"
+                    android:text="@string/txt_mcdonalds"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -103,9 +100,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/simboloqr"
-                    app:tint="@color/black"
-                    />
-
+                    app:tint="@color/black" />
             </LinearLayout>
 
             <LinearLayout
@@ -128,7 +123,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_weight="1"
-                    android:text="@string/Txtcomida_kfc"
+                    android:text="@string/txt_kfc"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -137,8 +132,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/simboloqr"
-                    app:tint="@color/black"
-                    />
+                    app:tint="@color/black" />
 
             </LinearLayout>
 
@@ -163,7 +157,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_weight="1"
-                    android:text="@string/Txtcomida_el_corral"
+                    android:text="@string/txt_el_corral"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -172,8 +166,7 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/simboloqr"
-                    app:tint="@color/black"
-                    />
+                    app:tint="@color/black" />
 
             </LinearLayout>
 
@@ -198,7 +191,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_weight="1"
-                    android:text="@string/Txtcomida_pollo_frisby"
+                    android:text="@string/txt_pollo_frisby"
                     android:textColor="@color/black"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -207,17 +200,14 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/simboloqr"
-                    app:tint="@color/black"
-                    />
-
+                    app:tint="@color/black" />
             </LinearLayout>
-
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/Txtcomida_daclick"
+                android:text="@string/txt_lastdescription_comidas"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />

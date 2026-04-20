@@ -4,11 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/fondo_opaco"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:padding="32dp"
-    >
+    android:padding="32dp">
 
     <ImageView
         android:layout_width="150dp"
@@ -28,48 +27,25 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:gravity="center"
-        android:text="@string/Txtasistencia_exitoso"
+        android:text="@string/txt_asistance_exitosa"
         android:textColor="#1A4373"
         android:textSize="20sp"
         android:textStyle="bold" />
 
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1" />
-
-
-    <LinearLayout
+    <Button
         android:id="@+id/btnAsistencia_volver"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="40dp"
+        android:text="@string/volver"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/navbar_background"
+        app:icon="@android:drawable/btn_star_big_on"
+        app:iconPadding="8dp"
+        app:iconTint="@color/navbar_background"
+        app:iconGravity="textStart"
         android:background="@drawable/style_buttons"
-        android:clickable="true"
-        android:focusable="true"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:paddingStart="24dp"
-        android:paddingTop="8dp"
-        android:paddingEnd="24dp"
-        android:paddingBottom="8dp">
-
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@android:drawable/btn_star_big_on"
-            app:tint="#1A4373" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="@string/Txtbton_volver"
-            android:textColor="#1A4373"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-    </LinearLayout>
-
+        app:backgroundTint="@null" />
 </LinearLayout>

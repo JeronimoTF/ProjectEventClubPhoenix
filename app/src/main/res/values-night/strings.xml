@@ -32,4 +32,14 @@
     <string name="txt_change_correo">Dirección de correo electrónico nueva</string>
     <string name="txt_correoactual_editdatos">Dirección de correo electrónico actual</string>
     <string name="tv_changecorreo">Cambiar correo electrónico</string>
+    <string name="txt_pedir_comidas">Pedir Comidas</string>
+    <string name="txt_kfc">KFC</string>
+    <string name="txt_mcdonalds">McDonald\'s</string>
+    <string name="txt_el_corral">El Corral</string>
+    <string name="txt_pollo_frisby">Pollo Frisby</string>
+    <string name="txt_lastdescription_comidas">Da click para escanear el menú de tú comida favorita</string>
+    <string name="txt_description_Noasitance">Registro de asistencia fallido, lo sentimos pero no encontramos su ticket</string>
+    <string name="txt_retry">Volver a intentar</string>
+    <string name="volver">Volver</string>
+    <string name="txt_asistance_exitosa">Registro de asistencia exitoso</string>
 </resources>
