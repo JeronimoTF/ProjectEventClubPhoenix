@@ -12,6 +12,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectEventClub">
         <activity
+            android:name=".auth.rec_contraseña.ErrorCambioContrasena"
+            android:exported="false" />
+        <activity
+            android:name=".auth.rec_contraseña.ContrasenaCambiadaExitosamente"
+            android:exported="false" />
+        <activity
+            android:name=".auth.registro.ContrasenaCambiadaExitosamente"
+            android:exported="false" />
+        <activity
+            android:name=".auth.rec_contraseña.NuevaContrasena"
+            android:exported="false" />
+        <activity
+            android:name=".auth.rec_contraseña.CodigoVerificacion"
+            android:exported="false" />
+        <activity
+            android:name=".auth.rec_contraseña.RecuperarContrasena"
+            android:exported="false" />
+        <activity
             android:name=".auth.registro.Confirmacion"
             android:exported="false" />
         <activity

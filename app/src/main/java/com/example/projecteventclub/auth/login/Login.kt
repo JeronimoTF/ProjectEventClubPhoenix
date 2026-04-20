@@ -8,6 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.projecteventclub.MainActivity
 import com.example.projecteventclub.R
+import com.example.projecteventclub.auth.rec_contraseña.RecuperarContrasena
 import com.example.projecteventclub.auth.registro.RegistroDatos
 
 class Login : AppCompatActivity() {
@@ -50,6 +51,15 @@ class Login : AppCompatActivity() {
 
         lnink.setOnClickListener {
             val intent = Intent(this@Login, RegistroDatos::class.java)
+            startActivity(intent)
+        }
+
+        //Dirigir a la pantalla de Camnbio contra
+
+        val link = findViewById<TextView>(R.id.RecCambioContra)
+
+        link.setOnClickListener {
+            val intent = Intent(this@Login, RecuperarContrasena::class.java)
             startActivity(intent)
         }
     }
