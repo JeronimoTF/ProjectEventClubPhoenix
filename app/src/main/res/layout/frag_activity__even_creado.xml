@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".atributos.eventos.crear.activity_EvenCreado">
 
     <!-- Header / Navbar Section -->
     <RelativeLayout
@@ -30,7 +31,7 @@
             android:layout_height="60dp"
             android:layout_centerHorizontal="true"
             android:gravity="center"
-            android:text="@string/txt_add_event"
+            android:text="Agregar Evento"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -53,12 +54,13 @@
         android:paddingEnd="16dp">
 
         <ImageView
-            android:id="@+id/btn_back"
+            android:id="@+id/btnBackEveCreado"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@android:drawable/ic_menu_revert"
             app:tint="@color/black" />
     </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -72,7 +74,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/txt_addevent_exitosa_description"
+            android:text="¡Perfecto, ya haz registrado tú evento, ahora podras consultarlo en breve junto a su respectivo ID y código QR!"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -91,5 +93,7 @@
             android:layout_height="250dp"
             android:layout_marginTop="48dp"
             android:src="@drawable/logo" />
+
     </LinearLayout>
+
 </LinearLayout>
