@@ -3,14 +3,12 @@ package com.example.projecteventclub.auth.login
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.projecteventclub.MainActivity
 import com.example.projecteventclub.R
-import com.example.projecteventclub.vista_usuario.main.admin.activity_adminPrincipal
-import com.example.projecteventclub.vista_usuario.main.usuarios.activity_usuarioPrincipal
+import com.example.projecteventclub.auth.registro.RegistroDatos
 
 class Login : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,5 +44,13 @@ class Login : AppCompatActivity() {
             finish()
         }
 
+        //Dirigir a la pantalla de Registro
+
+        val lnink = findViewById<TextView>(R.id.linkRegistro)
+
+        lnink.setOnClickListener {
+            val intent = Intent(this@Login, RegistroDatos::class.java)
+            startActivity(intent)
+        }
     }
 }

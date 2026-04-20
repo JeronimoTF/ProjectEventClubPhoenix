@@ -73,4 +73,20 @@
     <string name="txt_event_concert">Concierto</string>
     <string name="txt_descriptionvenet_mainuser">A continuación podra encontrar sus porximos\neventos</string>
     <string name="txt_welcome_mainuser">Bienvenido Usuario</string>
+    <string name="datos_del_usuario">Datos del usuario</string>
+    <string name="nombres">Nombres</string>
+    <string name="apellidos">Apellidos</string>
+    <string name="edad">Edad</string>
+    <string name="genero">Genero</string>
+    <string name="tipo_de_documento">Tipo de documento</string>
+    <string name="numero_de_documento">Numero de documento</string>
+    <string name="fecha_de_nacimiento">Fecha de Nacimiento</string>
+    <string name="siguiente">Siguiente</string>
+    <string name="celular">Celular</string>
+    <string name="correo">Correo</string>
+    <string name="ciudad_de_residencia">Ciudad de Residencia</string>
+    <string name="localidad">Localidad</string>
+    <string name="barrio">Barrio</string>
+    <string name="direcci_n">Direcciòn</string>
+    <string name="siguiente2">Siguiente</string>
 </resources>

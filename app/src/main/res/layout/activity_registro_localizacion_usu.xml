@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/fondo_opaco">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:gravity="center_horizontal">
+
+            <!-- LOGO -->
+            <ImageView
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/logo"
+                android:layout_marginBottom="16dp"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tituloDatosUsusLoca"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Datos de ubicacion del usuario"
+                android:textStyle="bold"
+                android:textColor="@color/navbar_background"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCelular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/celular"
+                android:layout_marginTop="30sp"
+                android:textColor="@color/navbar_background"
+                android:inputType="textPersonName" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCorreo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="@string/correo"
+                android:inputType="textPersonName" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etCiudadResi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="@string/ciudad_de_residencia"
+                android:inputType="number" />
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/spLocalidad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="@string/localidad" />
+
+            <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                android:id="@+id/spBarrio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="@string/barrio" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDireccion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:hint="@string/direcci_n"
+                android:inputType="number" />
+
+            <!-- BOTÓN SIGUIENTE -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSiguiente"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:layout_gravity="center"
+                android:textColor="@color/navbar_background"
+                android:fontFamily="serif"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:strokeColor="@color/navbar_background"
+                app:strokeWidth="3dp"
+                android:text="@string/siguiente2"
+                android:layout_marginTop="24dp"
+                app:cornerRadius="24dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
