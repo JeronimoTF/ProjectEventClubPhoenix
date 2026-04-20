@@ -6,17 +6,6 @@
     <string name="title_activity_bienvenida">activity_bienvenida</string>
     <string name="navbar_txt">EventClub</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="Txt_bienvenido_usuario_administrador">Bienvenido Usuario Administrador</string>
-    <string name="TxtBieUsuAdm">Bienvenido Usuario Administrador</string>
-    <string name="TxtQDRealizarhoy">¿Qué desea realizar hoy?</string>
-    <string name="TxtRegAsistencia">Registro\nde\nasistencia</string>
-    <string name="TxtConEvento">Consultar\nEvento</string>
-    <string name="TxtAgrEvento">Agregar\nEvento</string>
-    <string name="TxtEdtEvento">Editar\nEvento</string>
-    <string name="TxtLocEvento">Localizar\nEvento</string>
-    <string name="edit_datos_user">Modificar datos</string>
-    <string name="logout_user">Cerrar sesión</string>
     <string name="tv_editdatos">Modificar datos</string>
     <string name="txt_edithint_name">Nombres</string>
     <string name="txt_edithint_lastname">Apellidos</string>
@@ -41,5 +30,13 @@
     <string name="txt_retry">Volver a intentar</string>
     <string name="volver">Volver</string>
     <string name="txt_asistance_exitosa">Registro de asistencia exitoso</string>
+
+    <string name="TxtBieUsuAdm">Bienvenido Administrador</string>
+    <string name="TxtQDRealizarhoy">¿Qué desea realizar hoy?</string>
+    <string name="TxtRegAsistencia">Registrar asistencia</string>
+    <string name="TxtConEvento">Consultar evento</string>
+    <string name="TxtAgrEvento">Agregar evento</string>
+    <string name="TxtEdtEvento">Editar evento</string>
+    <string name="TxtLocEvento">Localizar evento</string>
 
 </resources>

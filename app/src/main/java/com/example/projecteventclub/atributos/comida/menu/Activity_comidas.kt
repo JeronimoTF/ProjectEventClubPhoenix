@@ -41,7 +41,7 @@ class Activity_comidas : Fragment() {
     companion object {
         /**
          * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
+         * this fragment using the provided parameters.ghb23154t60
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.

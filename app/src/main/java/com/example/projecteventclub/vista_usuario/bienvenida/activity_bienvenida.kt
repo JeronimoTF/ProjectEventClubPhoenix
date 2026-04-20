@@ -7,6 +7,7 @@ import android.os.Looper
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.projecteventclub.R
+import com.example.projecteventclub.vista_usuario.main.admin.activity_adminPrincipal
 
 class activity_bienvenida : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,7 +17,7 @@ class activity_bienvenida : AppCompatActivity() {
 
         // Pasar a la pantalla de admin automáticamente después de 3 segundos
         Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, activity_main_admin::class.java)
+            val intent = Intent(this, activity_adminPrincipal::class.java)
             startActivity(intent)
             finish() // Cerramos bienvenida para que no pueda regresar con el botón atrás
         }, 3000)
