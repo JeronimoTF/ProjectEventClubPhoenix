@@ -33,62 +33,75 @@
                 android:id="@+id/tituloDatosUsusLoca"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/datos_de_ubicacion_del_usuario"
+                android:text="@string/titulocontrase_a"
                 android:textStyle="bold"
                 android:textColor="@color/navbar_background"
                 android:textSize="20sp"
                 android:layout_marginTop="20dp" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etCelular"
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/celular"
+                android:layout_marginTop="16dp"
+                app:endIconMode="password_toggle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etContra"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/contrase_ausu"
                 android:layout_marginTop="30sp"
                 android:textColor="@color/navbar_background"
                 android:inputType="textPersonName" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:endIconMode="password_toggle">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etCorreo"
+                android:id="@+id/etRecontra"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:hint="@string/correo"
+                android:hint="@string/confirmar_contrase_a"
                 android:inputType="textPersonName" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etCiudadResi"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:hint="@string/ciudad_de_residencia"
-                android:inputType="number" />
+            <LinearLayout
+                android:layout_width="400dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="150dp"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-            <com.google.android.material.textfield.MaterialAutoCompleteTextView
-                android:id="@+id/spLocalidad"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:hint="@string/localidad" />
+                <CheckBox
+                    android:id="@+id/CheckTerminos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:buttonTint="@color/navbar_background"
+                    app:strokeColor="@color/navbar_background"
+                    app:strokeWidth="20dp" />
 
-            <com.google.android.material.textfield.MaterialAutoCompleteTextView
-                android:id="@+id/spBarrio"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:hint="@string/barrio" />
+                <TextView
+                    android:id="@+id/TerminosCondiciones"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="serif"
+                    android:textStyle="bold"
+                    android:text="@string/acepta_los_t_rminos_y_condiciones"
+                    android:textColor="@color/navbar_background"
+                    android:textSize="16sp" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etDireccion"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:hint="@string/direcci_n"
-                android:inputType="number" />
+            </LinearLayout>
+
+
 
             <!-- BOTÓN SIGUIENTE -->
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnSiguiente2"
+                android:id="@+id/btnSiguiente3"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/white"
@@ -99,8 +112,8 @@
                 android:textStyle="bold"
                 app:strokeColor="@color/navbar_background"
                 app:strokeWidth="3dp"
-                android:text="@string/siguiente2"
-                android:layout_marginTop="24dp"
+                android:text="@string/siguiente3"
+                android:layout_marginTop="50dp"
                 app:cornerRadius="24dp" />
 
         </LinearLayout>

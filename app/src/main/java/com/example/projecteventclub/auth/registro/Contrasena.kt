@@ -9,16 +9,16 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.projecteventclub.R
 
-class RegistroLocalizacionUsu : AppCompatActivity() {
+class Contrasena : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_registro_localizacion_usu)
+        setContentView(R.layout.activity_contrasena)
 
-        val btnSig1: Button = findViewById(R.id.btnSiguiente2)
+        val btnSig1: Button = findViewById(R.id.btnSiguiente3)
 
         btnSig1.setOnClickListener {
-            val intent = Intent(this@RegistroLocalizacionUsu, Contrasena::class.java)
+            val intent = Intent(this@Contrasena, Confirmacion::class.java)
             startActivity(intent)
             finish()
         }

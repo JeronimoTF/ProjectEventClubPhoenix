@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectEventClub">
         <activity
+            android:name=".auth.registro.Confirmacion"
+            android:exported="false" />
+        <activity
+            android:name=".auth.registro.Contrasena"
+            android:exported="false" />
+        <activity
             android:name=".auth.registro.RegistroLocalizacionUsu"
             android:exported="false" />
         <activity
