@@ -31,7 +31,7 @@
             android:layout_height="60dp"
             android:layout_centerHorizontal="true"
             android:gravity="center"
-            android:text="Consultar evento"
+            android:text="@string/txt_consult_event"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -77,26 +77,28 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nombre del evento"
-                android:textColor="@color/black"
+                android:text="@string/txt_nameevent_consultevent"
+                android:textColor="@color/navbar_background"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_marginBottom="15dp"
                 android:background="@drawable/style_edit_txt"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp" />
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp" />
+
 
             <!-- Fecha y hora -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Fecha y hora del evento"
-                android:textColor="@color/black"
+                android:text="@string/txt_consultevent_datetime"
+                android:textColor="@color/navbar_background"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -113,14 +115,14 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Descrpción del evento"
-                android:textColor="@color/black"
+                android:text="@string/txt_consultevent_descriptionbox"
+                android:textColor="@color/navbar_background"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <EditText
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
+                android:layout_height="150dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/style_edit_txt"
@@ -131,8 +133,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Localidad - zona"
-                android:textColor="@color/black"
+                android:text="@string/txt_consultevent_localidad"
+                android:textColor="@color/navbar_background"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -149,8 +151,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Piso - Silla"
-                android:textColor="@color/black"
+                android:text="@string/txt_consultevent_chair"
+                android:textColor="@color/navbar_background"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 

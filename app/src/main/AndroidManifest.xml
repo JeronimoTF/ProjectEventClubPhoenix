@@ -10,6 +10,7 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectEventClub">
+
         <activity
             android:name=".auth.login.Login"
             android:exported="false" />
@@ -18,7 +19,11 @@
             android:exported="false" />
         <activity
             android:name=".vista_usuario.bienvenida.activity_bienvenida"
+            android:exported="false"/>
+        <activity
+            android:name=".vista_usuario.bienvenida.Splash"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

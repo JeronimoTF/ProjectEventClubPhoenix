@@ -4,9 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
+
+    <!-- Header / Navbar Section -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="80dp">
@@ -17,18 +18,23 @@
             android:background="@color/navbar_background" />
 
         <ImageView
+            android:id="@+id/img_logo_nav"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginStart="16dp"
-            android:src="@drawable/logo" />
+            android:src="@drawable/logo"
+            android:contentDescription="@string/app_name" />
 
         <TextView
-
+            android:id="@+id/txt_nav_title"
             android:layout_width="wrap_content"
             android:layout_height="60dp"
-            android:layout_centerHorizontal="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="137dp"
+            android:layout_marginEnd="120dp"
             android:gravity="center"
-            android:text="Consultar evento"
+            android:text="@string/txt_consult_event"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -40,15 +46,15 @@
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="16dp"
             android:src="@android:drawable/ic_menu_myplaces"
-            app:tint="@color/white" />
+            app:tint="@color/white"
+/>
     </RelativeLayout>
 
+    <!-- Back Button Row -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="end"
-        android:paddingTop="8dp"
-        android:paddingEnd="16dp">
+        android:gravity="end">
 
         <ImageView
             android:id="@+id/btn_back"
@@ -58,7 +64,7 @@
             app:tint="@color/black" />
     </LinearLayout>
 
-
+    <!-- Scrollable Content -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -73,90 +79,93 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nombre del evento"
-                android:textColor="@color/black"
+                android:text="@string/txt_nameevent_consultevent"
+                android:textColor="@color/navbar_background"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/EditTxtConsNomEvenAdm"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_marginBottom="15dp"
                 android:background="@drawable/style_edit_txt"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp" />
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:hint="@string/txt_nameevent_consultevent" />
 
-
+            <!-- Texto informativo -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:gravity="center"
-                android:text="A continuación encontraras la información relacionada al evento"
-                android:textColor="#444444"
+                android:text="@string/txt_consultevent_description"
+                android:textColor="@color/navbar_background"
                 android:textSize="16sp" />
 
             <!-- Descripción -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Descrpción del evento"
-                android:textColor="@color/black"
+                android:text="@string/txt_consultevent_descriptionbox"
+                android:textColor="@color/navbar_background"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/EditTxtDesEvenAdm"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/style_edit_txt"
                 android:gravity="top"
-                android:padding="12dp" />
+                android:padding="12dp"
+                android:hint="@string/txt_consultevent_descriptionbox" />
 
+            <!-- Fecha y Hora -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Fecha y hora del evento"
-                android:textColor="@color/black"
+                android:text="@string/txt_consultevent_datetime"
+                android:textColor="@color/navbar_background"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/EditTxtFecHorEvenAdm"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/style_edit_txt"
                 android:paddingStart="16dp"
-                android:paddingEnd="16dp" />
+                android:paddingEnd="16dp"
+                android:hint="@string/txt_consultevent_datetime" />
 
+            <!-- ID -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ID del evento"
-                android:textColor="@color/black"
+                android:text="@string/txt_vonsultevent_ideventbox"
+                android:textColor="@color/navbar_background"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <EditText
-                android:id="@+id/EditTxtIDEvenAdm"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/style_edit_txt"
                 android:paddingStart="16dp"
-                android:paddingEnd="16dp" />
+                android:paddingEnd="16dp"
+                android:hint="@string/txt_vonsultevent_ideventbox" />
 
         </LinearLayout>
-
     </ScrollView>
 
+    <!-- Bottom Actions Section -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -165,6 +174,7 @@
         android:padding="16dp"
         android:layout_marginBottom="16dp">
 
+        <!-- Localizar -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -173,24 +183,25 @@
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/BtnLocEveadm"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:background="@drawable/style_buttons"
                 android:src="@android:drawable/ic_menu_mylocation"
-                app:tint="@color/black" />
+                app:tint="@color/black"
+                android:contentDescription="@string/txt_btn_localizarevent" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:gravity="center"
-                android:text="Localizar\nEvento"
-                android:textColor="@color/black"
+                android:text="@string/txt_btn_localizarevent"
+                android:textColor="@color/navbar_background"
                 android:textSize="12sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
+        <!-- Editar -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -199,24 +210,25 @@
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/BtnEditEveadm"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:background="@drawable/style_buttons"
                 android:src="@android:drawable/ic_menu_edit"
-                app:tint="@color/black" />
+                app:tint="@color/black"
+                android:contentDescription="@string/txt_btneditevent" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:gravity="center"
-                android:text="Editar\nEvento"
-                android:textColor="@color/black"
+                android:text="@string/txt_btneditevent"
+                android:textColor="@color/navbar_background"
                 android:textSize="12sp"
                 android:textStyle="bold" />
         </LinearLayout>
 
+        <!-- Eliminar -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -225,20 +237,20 @@
             android:orientation="vertical">
 
             <ImageButton
-                android:id="@+id/BtnEliEveadm"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:background="@drawable/style_buttons"
                 android:src="@android:drawable/ic_menu_close_clear_cancel"
-                app:tint="@color/black" />
+                app:tint="@color/black"
+                android:contentDescription="@string/txt_btn_deleteevent" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
                 android:gravity="center"
-                android:text="Eliminar\nEvento"
-                android:textColor="@color/black"
+                android:text="@string/txt_btn_deleteevent"
+                android:textColor="@color/navbar_background"
                 android:textSize="12sp"
                 android:textStyle="bold" />
         </LinearLayout>

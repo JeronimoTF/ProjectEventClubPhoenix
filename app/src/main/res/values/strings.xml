@@ -20,6 +20,7 @@
     <string name="txt_change_correo">Dirección de correo electrónico nueva</string>
     <string name="txt_correoactual_editdatos">Dirección de correo electrónico actual</string>
     <string name="tv_changecorreo">Cambiar correo electrónico</string>
+    <string name="tv_birthday">Fecha de nacimiento</string>"
     <string name="txt_pedir_comidas">Pedir Comidas</string>
     <string name="txt_kfc">KFC</string>
     <string name="txt_mcdonalds">McDonald\'s</string>
@@ -39,6 +40,15 @@
     <string name="olvidaste_tu_contrase_a">¿Olvidaste tu contraseña?</string>
     <string name="ingresa_con_huella">Ingresa con huella</string>
     <string name="comenzar">Comenzar</string>
+    <string name="txt_consult_event">Consultar evento</string>
+    <string name="txt_nameevent_consultevent">Nombre del evento</string>
+    <string name="txt_consultevent_description">A continuación encontraras la información relacionada al evento</string>
+    <string name="txt_consultevent_descriptionbox">Descrpción del evento</string>
+    <string name="txt_consultevent_datetime">Fecha y hora del evento</string>
+    <string name="txt_vonsultevent_ideventbox">ID del evento</string>
+    <string name="txt_btn_localizarevent">Localizar\nEvento</string>
+    <string name="txt_btneditevent">Editar\nEvento</string>
+    <string name="txt_btn_deleteevent">Eliminar\nEvento</string>
 
     <string name="TxtBieUsuAdm">Bienvenido Administrador</string>
     <string name="TxtQDRealizarhoy">¿Qué desea realizar hoy?</string>
@@ -47,5 +57,7 @@
     <string name="TxtAgrEvento">Agregar evento</string>
     <string name="TxtEdtEvento">Editar evento</string>
     <string name="TxtLocEvento">Localizar evento</string>
+    <string name="txt_consultevent_localidad">Localidad - zona</string>
+    <string name="txt_consultevent_chair">Piso - Silla</string>
 
 </resources>
