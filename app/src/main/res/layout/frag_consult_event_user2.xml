@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:orientation="vertical"
-    tools:context=".atributos.eventos.consultar_evento.activity_ConEvUsu2">
+    android:orientation="vertical">
 
     <!-- Header / Navbar Section -->
     <RelativeLayout
@@ -55,7 +53,7 @@
         android:paddingEnd="16dp">
 
         <ImageView
-            android:id="@+id/btn_back"
+            android:id="@+id/btnBackConEveUsu2"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@android:drawable/ic_menu_revert"
@@ -83,6 +81,7 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/EditTxtNomEveUsu2"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:textColor="@color/black"
@@ -103,6 +102,7 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/EditTxtFecHorEveUsu2"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="8dp"
@@ -122,6 +122,7 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/EditTxtDesEveUsu2"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginTop="8dp"
@@ -141,6 +142,7 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/EditTxtLocZonUsu2"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="8dp"
@@ -160,6 +162,7 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/EditTxtPisoSillaUsu2"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="8dp"

@@ -206,6 +206,7 @@
                         android:orientation="vertical">
 
                         <ImageButton
+                            android:id="@+id/btnPedComMuser"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
                             android:background="@drawable/style_buttons"
@@ -231,6 +232,7 @@
                         android:orientation="vertical">
 
                         <ImageButton
+                            android:id="@+id/btnConEveMuser"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
                             android:background="@drawable/style_buttons"
@@ -256,6 +258,7 @@
                         android:orientation="vertical">
 
                         <ImageButton
+                            android:id="@+id/btnLocEveMuser"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
                             android:background="@drawable/style_buttons"
@@ -281,6 +284,7 @@
                         android:orientation="vertical">
 
                         <ImageButton
+                            android:id="@+id/btnConEveMuser"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
                             android:background="@drawable/style_buttons"

@@ -10,6 +10,7 @@
     android:padding="32dp">
 
     <ImageView
+        android:id="@+id/imgLogoAsisCor"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_marginTop="20dp"

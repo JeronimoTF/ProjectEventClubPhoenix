@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
     <!-- Header / Navbar Section -->
     <RelativeLayout
@@ -51,7 +52,7 @@
         android:paddingEnd="16dp">
 
         <ImageView
-            android:id="@+id/btn_back"
+            android:id="@+id/btnBackCreEveAdm"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@android:drawable/ic_menu_revert"
@@ -73,44 +74,44 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txt_name_event"
-                android:textColor="@color/navbar_background"
+                android:text="Nombre del evento"
+                android:textColor="@color/black"
                 android:textSize="18sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/EditTxtNomEveAdm"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/style_edit_txt"
                 android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:hint="@string/txt_name_event" />
+                android:paddingEnd="16dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txt_evvent_description"
-                android:textColor="@color/navbar_background"
+                android:text="Descrpción del evento"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/EditTxtDesEveAdm"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/style_edit_txt"
                 android:gravity="top"
-                android:padding="12dp"
-                android:hint="@string/txt_evvent_description"/>
+                android:padding="12dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txt_consultevent_date"
-                android:textColor="@color/navbar_background"
+                android:text="Fecha del evento"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -121,13 +122,13 @@
                 android:layout_marginBottom="16dp">
 
                 <EditText
+                    android:id="@+id/EditTxtFecEveAdn"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/style_edit_txt"
                     android:focusable="false"
                     android:paddingStart="16dp"
-                    android:paddingEnd="50dp"
-                    android:hint="@string/txt_consultevent_date"/>
+                    android:paddingEnd="50dp" />
 
                 <ImageView
                     android:layout_width="35dp"
@@ -142,8 +143,8 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txt_event_hour"
-                android:textColor="@color/navbar_background"
+                android:text="Hora del evento"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -154,13 +155,13 @@
                 android:layout_marginBottom="16dp">
 
                 <EditText
+                    android:id="@+id/EditTxtHorEveAdm"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/style_buttons"
                     android:focusable="false"
                     android:paddingStart="16dp"
-                    android:paddingEnd="50dp"
-                    android:hint="@string/txt_event_hour"/>
+                    android:paddingEnd="50dp" />
 
                 <ImageView
                     android:layout_width="35dp"
@@ -176,20 +177,21 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txt_event_place"
-                android:textColor="@color/navbar_background"
+                android:text="Lugar del evento"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/EditTxtLugEveAdm"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/style_edit_txt"
                 android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:hint="@string/txt_event_place"/>
+                android:paddingEnd="16dp" />
+
         </LinearLayout>
     </ScrollView>
 
@@ -213,20 +215,13 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <Button
-            android:id="@+id/confirm_ecreate_event"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
+        <ImageButton
+            android:id="@+id/btnCreEveAdm"
+            android:layout_width="70dp"
+            android:layout_height="80dp"
             android:background="@drawable/style_buttons"
-            android:text="@string/btn_save"
-            android:textColor="@color/navbar_background"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:backgroundTint="@null"
-            app:icon="@android:drawable/btn_star_big_on"
-            app:iconGravity="textStart"
-            app:iconPadding="8dp"
-            app:iconTint="@color/navbar_background" />
+            android:scaleType="centerInside"
+            android:src="@android:drawable/checkbox_on_background"
+            app:tint="@color/black" />
     </LinearLayout>
 </LinearLayout>

@@ -55,7 +55,7 @@
         android:gravity="end">
 
         <ImageView
-            android:id="@+id/btn_back"
+            android:id="@+id/btnBackConEveAdm"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:src="@android:drawable/ic_menu_revert"
@@ -83,6 +83,7 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/EditTxtNomEveAdm"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:textColor="@color/black"
@@ -113,6 +114,7 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/EditTxDesEveAdm"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_marginTop="8dp"
@@ -132,6 +134,7 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/EditTxtIdEveAdm"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="8dp"
@@ -151,6 +154,7 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/EditTxtFecHorEveAdm"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="8dp"
@@ -180,6 +184,7 @@
             android:orientation="vertical">
 
             <ImageButton
+                android:id="@+id/btnEliEveAdm"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:background="@drawable/style_buttons"
@@ -207,6 +212,7 @@
             android:orientation="vertical">
 
             <ImageButton
+                android:id="@+id/btnLocEveAdm"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:background="@drawable/style_buttons"
@@ -234,6 +240,7 @@
             android:orientation="vertical">
 
             <ImageButton
+                android:id="@+id/btnEdiEveAdm"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:background="@drawable/style_buttons"

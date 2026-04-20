@@ -70,6 +70,7 @@
             android:padding="24dp">
 
             <LinearLayout
+                android:id="@+id/btnBomidas1"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginBottom="16dp"
@@ -95,6 +96,7 @@
                     android:textStyle="bold" />
 
                 <ImageView
+                    android:id="@+id/QR1"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/simboloqr"
@@ -102,6 +104,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/btnBomidas2"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginBottom="16dp"
@@ -127,6 +130,7 @@
                     android:textStyle="bold" />
 
                 <ImageView
+                    android:id="@+id/QR2"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/simboloqr"
@@ -134,6 +138,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/btnBomidas3"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginBottom="16dp"
@@ -159,6 +164,7 @@
                     android:textStyle="bold" />
 
                 <ImageView
+                    android:id="@+id/QR3"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/simboloqr"
@@ -166,6 +172,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/btnBomidas4"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_marginBottom="32dp"
@@ -191,6 +198,7 @@
                     android:textStyle="bold" />
 
                 <ImageView
+                    android:id="@+id/QR4"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:src="@drawable/simboloqr"
