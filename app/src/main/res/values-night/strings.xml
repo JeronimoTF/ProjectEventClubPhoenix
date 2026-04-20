@@ -97,4 +97,8 @@
     <string name="acepta_los_t_rminos_y_condiciones">¿Acepta los términos y condiciones?</string>
     <string name="usuario_creado_exitosamente">Usuario creado exitosamente</string>
     <string name="volver_login">Ingresar</string>
+    <string name="TxtCambDataExitos">¡Perfecto, ya haz cambiado tus datos con exito!</string>
+    <string name="TxtCamEmaEcit">¡Perfecto, ya haz cambiado tú correo electrónico con exito!</string>
+    <string name="TxtcambioContraseña">Cambio de contraseña</string>
+    <string name="TxtConfirmacionCorreo">En este momento te llegara un código a tú correo eléctronico asignado a la cuenta, por favor digitalo en el siguiente recuadro.</string>
 </resources>

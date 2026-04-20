@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/fondo_opaco">
+
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="180dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/TxtConNum"
+        android:textColor="@color/navbar_background"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        />
+
+    <EditText
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="15dp"
+        android:layout_gravity="center"
+        android:background="@drawable/style_edit_txt"
+        android:textColorHint="@color/navbar_background" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="40dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnConNumRee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Reenviar"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/navbar_background"
+            app:icon="@android:drawable/btn_star_big_on"
+            app:iconPadding="8dp"
+            app:iconTint="@color/navbar_background"
+            app:iconGravity="textStart"
+            android:background="@drawable/style_buttons"
+            app:backgroundTint="@null" />
+
+        <Button
+            android:id="@+id/btnConNumConf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@string/btn_save"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/navbar_background"
+            app:icon="@android:drawable/btn_star_big_on"
+            app:iconPadding="8dp"
+            app:iconTint="@color/navbar_background"
+            app:iconGravity="textStart"
+            android:background="@drawable/style_buttons"
+            app:backgroundTint="@null" />
+
+    </LinearLayout>
+
+</LinearLayout>
