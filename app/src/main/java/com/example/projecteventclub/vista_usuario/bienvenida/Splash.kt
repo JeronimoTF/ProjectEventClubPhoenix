@@ -19,7 +19,7 @@ class Splash : AppCompatActivity() {
             val intent = Intent(this@Splash, activity_bienvenida::class.java)
             startActivity(intent)
             finish() // Cerramos bienvenida para que no pueda regresar con el botón atrás
-        }, 3000)
+        }, 2500)
     }
 
 }
