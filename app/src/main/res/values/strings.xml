@@ -103,13 +103,17 @@
     <string name="acepta_los_t_rminos_y_condiciones">¿Acepta los términos y condiciones?</string>
     <string name="usuario_creado_exitosamente">Usuario creado exitosamente</string>
     <string name="volver_login">Ingresar</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="TxtCambioCon">¡Perfecto, ya haz cambiado tú contraseña con exito!</string>
-    <string name="TxtCambDataExitos">¡Perfecto, ya haz cambiado tus datos con exito!</string>
-    <string name="TxtCamEmaEcit">¡Perfecto, ya haz cambiado tú correo electrónico con exito!</string>
-    <string name="TxtcambioContraseña">Cambio de contraseña</string>
-    <string name="TxtConfirmacionCorreo">En este momento te llegara un código a tú correo eléctronico asignado a la cuenta, por favor digitalo en el siguiente recuadro.</string>
-    <string name="TxtConNum">En este momento te llegara un código a tú número celular asignado a la cuenta, por favor digitalo en el siguiente recuadro.</string>
+    <string name="recupera_tu_contrase_a">Recupera Tu Contraseña</string>
+    <string name="correo_electronico_RecContra">Correo electronico</string>
+    <string name="correoElectr_RecCuenta_Info">Diligencia el correo registrado para EventClub</string>
+    <string name="enviar_codigo">Enviar Codigo</string>
+    <string name="ingresa_el_codigo_de_confirmacion">Ingresa el codigo de recuperacion</string>
+    <string name="DescripCodigoCofir_CambiContra">Se te enviara un codigo de confirmacon a tu corre, por favor digitalo para continuar</string>
+    <string name="CambioContra_RequisitosContra">Entre 8 a 15 caracteres, que contenga(Mayusculas, minusculas, min 1 caracter especial, min 1 numero)</string>
+    <string name="contrase_a_nueva">Contraseña Nueva</string>
+    <string name="btncambiar_contrase_a">Cambiar Contraseña</string>
+    <string name="Contra_guardada_exito">Contraseña guardada exitosamente</string>
+    <string name="Error_Cambio_Contra">La contraseña no cumple con los parametros, por favor intente nuevamente</string>
+    <string name="btnrecuperar_contrase_a">Recuperar Contraseña</string>
 
 </resources>

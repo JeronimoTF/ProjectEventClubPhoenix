@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/fondo_opaco">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:gravity="center_horizontal">
+
+            <!-- LOGO -->
+            <ImageView
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/logo"
+                android:layout_marginBottom="16dp"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tituloDatosUsusLoca"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/recupera_tu_contrase_a"
+                android:textStyle="bold"
+                android:textColor="@color/navbar_background"
+                android:textSize="20sp"
+                android:layout_marginTop="20dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:endIconMode="password_toggle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etContra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/contrase_a_nueva"
+                    android:layout_marginTop="30sp"
+                    android:textColor="@color/navbar_background"
+                    android:inputType="textPersonName" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:endIconMode="password_toggle">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etRecontra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:hint="@string/confirmar_contrase_a"
+                    android:inputType="textPersonName" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- BOTÓN SIGUIENTE -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRecuperaContra3"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:layout_gravity="center"
+                android:textColor="@color/navbar_background"
+                android:fontFamily="serif"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:strokeColor="@color/navbar_background"
+                app:strokeWidth="3dp"
+                android:text="@string/btncambiar_contrase_a"
+                android:layout_marginTop="50dp"
+                app:cornerRadius="24dp" />
+
+            <TextView
+                android:id="@+id/DescripcionRecCuenta_CorreoElectro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:layout_marginTop="120sp"
+                android:text="@string/CambioContra_RequisitosContra"
+                android:textAlignment="center"
+                android:textColor="@color/navbar_background"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
