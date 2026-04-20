@@ -60,7 +60,6 @@
             app:tint="@color/black" />
     </LinearLayout>
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -73,7 +72,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="¡Error, no se pudo registrar tu evento!"
+            android:text="@string/txt_wrongadd_eventdescription"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />

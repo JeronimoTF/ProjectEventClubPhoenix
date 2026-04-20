@@ -5,7 +5,6 @@
     android:background="#90B6CE"
     android:orientation="vertical">
 
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="80dp">
@@ -20,9 +19,8 @@
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginStart="16dp"
-            android:src="@drawable/logo" />
-
-
+            android:src="@drawable/logo"
+            android:contentDescription="@string/app_name" />
 
         <ImageView
             android:id="@+id/img_profile"
@@ -30,8 +28,7 @@
             android:layout_height="60dp"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="16dp"
-            android:src="@android:drawable/ic_menu_myplaces"
-            />
+            android:src="@android:drawable/ic_menu_myplaces" />
     </RelativeLayout>
 
     <LinearLayout
@@ -80,8 +77,8 @@
                 android:id="@+id/BtnRegistroAsis"
                 android:layout_width="55dp"
                 android:layout_height="60dp"
-                android:backgroundTint="@color/white" />
-
+                android:backgroundTint="@color/white"
+                android:contentDescription="@string/TxtRegAsistencia" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -103,7 +100,8 @@
                 android:layout_width="55dp"
                 android:layout_height="60dp"
                 android:backgroundTint="@color/white"
-                android:src="@drawable/simbolo_qr" />
+                android:src="@drawable/simbolo_qr"
+                android:contentDescription="@string/TxtConEvento" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -112,9 +110,7 @@
                 android:text="@string/TxtConEvento"
                 android:textColor="#1A237E" />
         </LinearLayout>
-
     </LinearLayout>
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -134,7 +130,8 @@
                 android:layout_width="55dp"
                 android:layout_height="60dp"
                 android:backgroundTint="@color/white"
-                android:src="@drawable/simbolo_qr" />
+                android:src="@drawable/simbolo_qr"
+                android:contentDescription="@string/TxtAgrEvento" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -156,8 +153,8 @@
                 android:layout_width="55dp"
                 android:layout_height="60dp"
                 android:backgroundTint="@color/white"
-                android:src="@drawable/simbolo_qr" />
-
+                android:src="@drawable/simbolo_qr"
+                android:contentDescription="@string/TxtEdtEvento" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -179,8 +176,8 @@
                 android:layout_width="55dp"
                 android:layout_height="60dp"
                 android:backgroundTint="@color/white"
-                android:src="@drawable/simbolo_qr" />
-
+                android:src="@drawable/simbolo_qr"
+                android:contentDescription="@string/TxtLocEvento" />
 
             <TextView
                 android:layout_width="wrap_content"

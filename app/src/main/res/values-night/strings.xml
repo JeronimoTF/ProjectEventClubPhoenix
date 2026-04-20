@@ -58,4 +58,19 @@
     <string name="txt_evvent_description">Descrpción del evento</string>
     <string name="txt_event_hour">Hora del evento</string>
     <string name="txt_event_place">Lugar del evento</string>
+    <string name="creatorsOfTheApp">Jeronimo Tapias - Carlos Peña - Camila Murcia</string>
+    <string name="txt_add_event">Agregar Evento</string>
+    <string name="txt_addevent_exitosa_description">¡Perfecto, ya haz registrado tú evento, ahora podras consultarlo en breve junto a su respectivo ID y código QR!</string>
+    <string name="txt_wrongadd_eventdescription">¡Error, no se pudo registrar tu evento!</string>
+    <string name="txt_btn_agenda">Agenda</string>
+    <string name="txt_consulEvent">Consultar\nEvento</string>
+    <string name="txt_want_food">Pedir\nComida</string>
+    <string name="txt_menuuser_description">Servicios de acceso rapido</string>
+    <string name="txt_advertisement_event">¡No te lo pierdas!</string>
+    <string name="txt_date_ej">20 junio</string>
+    <string name="txt_date_ej2">22 marzo</string>
+    <string name="txt_event_theater">Teatro</string>
+    <string name="txt_event_concert">Concierto</string>
+    <string name="txt_descriptionvenet_mainuser">A continuación podra encontrar sus porximos\neventos</string>
+    <string name="txt_welcome_mainuser">Bienvenido Usuario</string>
 </resources>

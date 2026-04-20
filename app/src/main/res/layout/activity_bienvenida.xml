@@ -57,5 +57,4 @@
         android:textStyle="bold"
         app:strokeColor="@color/navbar_background"
         app:strokeWidth="3dp"/>
-
 </LinearLayout>

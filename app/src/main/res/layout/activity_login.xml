@@ -29,7 +29,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etUsuario"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:textColor="@color/navbar_background"
             android:hint="@string/correo_o_usuario"
             android:inputType="textEmailAddress" />
@@ -134,7 +134,6 @@
             android:textColor="@color/navbar_background"
             android:textSize="13sp"
             android:layout_marginTop="12dp" />
-
     </LinearLayout>
     </ScrollView>
 </LinearLayout>

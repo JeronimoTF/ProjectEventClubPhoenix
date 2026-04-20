@@ -7,8 +7,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    android:background="@drawable/fondo"
-    tools:context=".Splash">
+    android:background="@drawable/fondo">
 
     <ImageView
         android:id="@+id/imageView"
@@ -33,13 +32,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
 <TextView
     android:id="@+id/NombresEquipo"
     android:layout_width="wrap_content"
     android:layout_height="31dp"
     android:fontFamily=""
-    android:text="Jeronimo Tapias - Carlos Peña - Camila Murcia"
+    android:text="@string/creatorsOfTheApp"
     android:textAlignment="center"
     android:textColor="@color/white"
     android:textSize="18sp"
@@ -47,5 +45,4 @@
     android:layout_marginStart="10dp"
     android:layout_marginTop="190dp"
     app:layout_constraintVertical_bias="0.767" />
-
 </LinearLayout>

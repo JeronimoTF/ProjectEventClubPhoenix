@@ -6,7 +6,6 @@
     android:background="@color/white"
     android:orientation="vertical">
 
-
     <!-- Header / Navbar Section -->
     <RelativeLayout
         android:layout_width="match_parent"
@@ -46,8 +45,7 @@
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="16dp"
             android:src="@android:drawable/ic_menu_myplaces"
-            app:tint="@color/white"
-/>
+            app:tint="@color/white" />
     </RelativeLayout>
 
     <!-- Back Button Row -->
@@ -161,7 +159,6 @@
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
                 android:hint="@string/txt_vonsultevent_ideventbox" />
-
         </LinearLayout>
     </ScrollView>
 
@@ -254,7 +251,5 @@
                 android:textSize="12sp"
                 android:textStyle="bold" />
         </LinearLayout>
-
     </LinearLayout>
-
 </LinearLayout>
