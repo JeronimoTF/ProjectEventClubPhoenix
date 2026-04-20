@@ -2,12 +2,13 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_bienvenida"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical"
     android:background="@drawable/fondo"
-    tools:context=".vista_usuario.bienvenida.activity_bienvenida">
+    tools:context=".Splash">
 
     <ImageView
         android:id="@+id/imageView"
@@ -15,7 +16,7 @@
         android:layout_height="250dp"
         app:srcCompat="@drawable/logo"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp"/>
+        android:layout_marginTop="30dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -26,36 +27,25 @@
         android:textStyle="italic"
         android:textSize="50sp"
         android:layout_gravity="center"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:textStyle="italic"
-        android:padding="10sp"
-        android:textColor="@color/white"
-        android:text="@string/txt_welcome_msj"
-        android:textAlignment="center"
-        android:textSize="23sp"/>
 
-    <Button
-        android:id="@+id/btnComenzar"
-        android:layout_width="230dp"
-        android:layout_height="65dp"
-        android:layout_marginTop="65dp"
-        android:backgroundTint="@color/white"
-        android:layout_gravity="center"
-        android:textColor="@color/navbar_background"
-        android:fontFamily="serif"
-        android:text="@string/comenzar"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        app:strokeColor="@color/navbar_background"
-        app:strokeWidth="3dp"/>
+<TextView
+    android:id="@+id/NombresEquipo"
+    android:layout_width="wrap_content"
+    android:layout_height="31dp"
+    android:fontFamily=""
+    android:text="Jeronimo Tapias - Carlos Peña - Camila Murcia"
+    android:textAlignment="center"
+    android:textColor="@color/white"
+    android:textSize="18sp"
+    android:textStyle="italic"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="190dp"
+    app:layout_constraintVertical_bias="0.767" />
 
 </LinearLayout>

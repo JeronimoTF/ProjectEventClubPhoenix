@@ -1,8 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">EventClub</string>
+    <string name="txt_welcome">Bienvenido</string>
+    <string name="txt_welcome_msj">Descubre y gestiona eventos inolvidables de forma sencilla</string>
+    <string name="txtBttnComenzar">Comenzar</string>
+    <string name="title_activity_bienvenida">activity_bienvenida</string>
     <string name="navbar_txt">EventClub</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Txt_bienvenido_usuario_administrador">Bienvenido Usuario Administrador</string>
+    <string name="TxtBieUsuAdm">Bienvenido Usuario Administrador</string>
+    <string name="TxtQDRealizarhoy">¿Qué desea realizar hoy?</string>
+    <string name="TxtRegAsistencia">Registro\nde\nasistencia</string>
+    <string name="TxtConEvento">Consultar\nEvento</string>
     <string name="TxtAgrEvento">Agregar\nEvento</string>
+    <string name="TxtEdtEvento">Editar\nEvento</string>
+    <string name="TxtLocEvento">Localizar\nEvento</string>
     <string name="edit_datos_user">Modificar datos</string>
     <string name="logout_user">Cerrar sesión</string>
+    <string name="tv_editdatos">Modificar datos</string>
+    <string name="txt_edithint_name">Nombres</string>
+    <string name="txt_edithint_lastname">Apellidos</string>
+    <string name="txt_edithint_celular">Celular</string>
+    <string name="txt_edithint_typedocument">Tipo de documento</string>
+    <string name="txt_edithint_document">Número de documento</string>
+    <string name="txt_edithint_birhtday">Fecha de nacimiento</string>
+    <string name="txt_edithint_ordenbirthday">DD/MM/AAAA</string>
+    <string name="change_correo">Cambiar Correo</string>
+    <string name="change_password">Cambiar Contraseña</string>
+    <string name="btn_save">Confirmar</string>
+    <string name="txt_change_correo">Dirección de correo electrónico nueva</string>
+    <string name="txt_correoactual_editdatos">Dirección de correo electrónico actual</string>
+    <string name="tv_changecorreo">Cambiar correo electrónico</string>
+    <string name="txt_pedir_comidas">Pedir Comidas</string>
+    <string name="txt_kfc">KFC</string>
+    <string name="txt_mcdonalds">McDonald\'s</string>
+    <string name="txt_el_corral">El Corral</string>
+    <string name="txt_pollo_frisby">Pollo Frisby</string>
+    <string name="txt_lastdescription_comidas">Da click para escanear el menú de tú comida favorita</string>
+    <string name="txt_description_Noasitance">Registro de asistencia fallido, lo sentimos pero no encontramos su ticket</string>
+    <string name="txt_retry">Volver a intentar</string>
+    <string name="volver">Volver</string>
+    <string name="txt_asistance_exitosa">Registro de asistencia exitoso</string>
 </resources>
