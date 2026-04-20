@@ -39,10 +39,10 @@ class activity_adminPrincipal : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
         val view = inflater.inflate(R.layout.frag_main_adm, container, false)
 
-        // Botón Registrar Asistencia (Abre Cámara)
+        // Botón Registrar Asistencia para abrir la camara
 
         val btnRegistroAsis = view.findViewById<Button>(R.id.BtnRegistroAsis)
         btnRegistroAsis?.setOnClickListener {
@@ -50,7 +50,7 @@ class activity_adminPrincipal : Fragment() {
             startActivity(intent)
         }
 
-        // Botón Localizar Evento (Abre Google Maps)
+        // Botón Localizar Evento abre el google maps
 
         val btnLocalizarEve = view.findViewById<Button>(R.id.BtnlocalizarEve)
         btnLocalizarEve?.setOnClickListener {
@@ -60,7 +60,7 @@ class activity_adminPrincipal : Fragment() {
             startActivity(mapIntent)
         }
 
-        // Botón Agregar Evento
+        // Botón Agregar Evento redirige a crear evento
 
         val btnAgregarEve = view.findViewById<Button>(R.id.BtnAgregarEve)
         btnAgregarEve?.setOnClickListener {
@@ -68,7 +68,7 @@ class activity_adminPrincipal : Fragment() {
             startActivity(intent)
         }
 
-        // Botón Editar Evento
+        // Botón Editar Evento crear evento
 
         val btnEditarEve = view.findViewById<Button>(R.id.BtnEditarEve)
         btnEditarEve?.setOnClickListener {
