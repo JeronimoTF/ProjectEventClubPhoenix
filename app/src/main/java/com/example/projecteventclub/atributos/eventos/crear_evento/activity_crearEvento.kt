@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import android.widget.ImageButton
 import com.example.projecteventclub.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -37,19 +38,25 @@ class activity_crearEvento : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        //Abrir google maps
-
         val view = inflater.inflate(R.layout.frag_crear_event_adm, container, false)
 
-
+        // Referencia al EditText de Lugar del Evento (Abrir Google Maps)
         val editTxtLugEveAdm = view.findViewById<EditText>(R.id.EditTxtLugEveAdm)
-        
         editTxtLugEveAdm?.setOnClickListener {
             val gmmIntentUri = Uri.parse("geo:0,0?q=")
             val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
             mapIntent.setPackage("com.google.android.apps.maps")
             startActivity(mapIntent)
+        }
+
+        // Botón Crear Evento (Navegar a Evento Creado)
+        val btnCreEveAdm = view.findViewById<ImageButton>(R.id.btnCreEveAdm)
+        btnCreEveAdm?.setOnClickListener {
+            val fragmentCreado = activity_EvenCreado()
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, fragmentCreado)
+                .addToBackStack(null)
+                .commit()
         }
 
         return view

@@ -1,196 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#90B6CE"
+    android:background="@color/white"
     android:orientation="vertical">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="80dp">
 
-        <View
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@color/navbar_background" />
-
-        <ImageView
-            android:id="@+id/img_logo_nav"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginStart="16dp"
-            android:src="@drawable/logo"
-            android:contentDescription="@string/app_name" />
-
-        <ImageView
-            android:id="@+id/img_profile"
-            android:layout_width="40dp"
-            android:layout_height="60dp"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="16dp"
-            android:src="@android:drawable/ic_menu_myplaces" />
-    </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_marginTop="60dp"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/TxtBieUsuAdm"
-            android:textColor="#1A237E"
-            android:textSize="22sp"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="@string/TxtQDRealizarhoy"
-            android:textColor="#3F51B5"
-            android:textSize="16sp" />
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.7" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="2">
-
-        <LinearLayout
-            android:layout_width="110dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/BtnRegistroAsis"
-                android:layout_width="55dp"
-                android:layout_height="60dp"
-                android:backgroundTint="@color/white"
-                android:contentDescription="@string/TxtRegAsistencia" />
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="24dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/TxtRegAsistencia"
-                android:textColor="#1A237E" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="110dp"
-            android:layout_height="170dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/BtnConsultarEve"
-                android:layout_width="55dp"
-                android:layout_height="60dp"
-                android:backgroundTint="@color/white"
-                android:src="@drawable/simbolo_qr"
-                android:contentDescription="@string/TxtConEvento" />
+                android:layout_marginTop="40dp"
+                android:text="Bienvenido Administrador"
+                android:textColor="#1A237E"
+                android:textSize="26sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/TxtConEvento"
-                android:textColor="#1A237E" />
-        </LinearLayout>
-    </LinearLayout>
+                android:layout_marginTop="12dp"
+                android:text="@string/TxtQDRealizarhoy"
+                android:textColor="#3F51B5"
+                android:textSize="18sp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="3">
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/BtnAgregarEve"
-                android:layout_width="55dp"
-                android:layout_height="60dp"
-                android:backgroundTint="@color/white"
-                android:src="@drawable/simbolo_qr"
-                android:contentDescription="@string/TxtAgrEvento" />
-
-            <TextView
-                android:layout_width="wrap_content"
+            <!-- Fila 1: Registro y Consultar -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
                 android:gravity="center"
-                android:text="@string/TxtAgrEvento"
-                android:textColor="#1A237E" />
-        </LinearLayout>
+                android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-            <Button
-                android:id="@+id/BtnEditarEve"
-                android:layout_width="55dp"
-                android:layout_height="60dp"
-                android:backgroundTint="@color/white"
-                android:src="@drawable/simbolo_qr"
-                android:contentDescription="@string/TxtEdtEvento" />
+                    <ImageButton
+                        android:id="@+id/BtnRegistroAsis"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:background="@drawable/style_buttons"
+                        android:src="@drawable/simbolo_qr"
+                        app:tint="@color/black" />
 
-            <TextView
-                android:layout_width="wrap_content"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center"
+                        android:text="Registro de\nasistencia"
+                        android:textColor="#1A237E"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/BtnConsultarEve"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:background="@drawable/style_buttons"
+                        android:src="@android:drawable/ic_menu_search"
+                        app:tint="@color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center"
+                        android:text="Consultar\nEvento"
+                        android:textColor="#1A237E"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Fila 2: Agregar, Editar y Localizar -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
                 android:gravity="center"
-                android:text="@string/TxtEdtEvento"
-                android:textColor="#1A237E" />
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/BtnAgregarEve"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:background="@drawable/style_buttons"
+                        android:src="@android:drawable/ic_menu_add"
+                        app:tint="@color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"
+                        android:text="Agregar\nEvento"
+                        android:textColor="#1A237E"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/BtnEditarEve"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:background="@drawable/style_buttons"
+                        android:src="@android:drawable/ic_menu_edit"
+                        app:tint="@color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"
+                        android:text="Editar\nEvento"
+                        android:textColor="#1A237E"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/BtnlocalizarEve"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:background="@drawable/style_buttons"
+                        android:src="@android:drawable/ic_menu_mylocation"
+                        app:tint="@color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"
+                        android:text="Localizar\nEvento"
+                        android:textColor="#1A237E"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/BtnlocalizarEve"
-                android:layout_width="55dp"
-                android:layout_height="60dp"
-                android:backgroundTint="@color/white"
-                android:src="@drawable/simbolo_qr"
-                android:contentDescription="@string/TxtLocEvento" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/TxtLocEvento"
-                android:textColor="#1A237E" />
-        </LinearLayout>
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
-
+    </ScrollView>
 </LinearLayout>

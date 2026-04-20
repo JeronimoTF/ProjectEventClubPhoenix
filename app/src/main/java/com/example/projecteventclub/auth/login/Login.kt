@@ -18,46 +18,40 @@ class Login : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         // Botón ingresar como usuario
-
         val btn2: Button = findViewById(R.id.btnUsuario)
-
         btn2.setOnClickListener {
             val intent = Intent(this@Login, MainActivity::class.java)
+            intent.putExtra("USER_TYPE", "USER")
             startActivity(intent)
             finish()
         }
 
-        // Botón ingresar como usuario
-
+        // Botón ingresar como anfitrion
         val btn3: Button = findViewById(R.id.btnAnfitrion)
-
         btn3.setOnClickListener {
             val intent = Intent(this@Login, MainActivity::class.java)
+            intent.putExtra("USER_TYPE", "ADMIN")
             startActivity(intent)
             finish()
         }
 
         val btn4: Button = findViewById(R.id.btnGoogle)
-
         btn4.setOnClickListener {
             val intent = Intent(this@Login, MainActivity::class.java)
+            intent.putExtra("USER_TYPE", "USER")
             startActivity(intent)
             finish()
         }
 
         //Dirigir a la pantalla de Registro
-
         val lnink = findViewById<TextView>(R.id.linkRegistro)
-
         lnink.setOnClickListener {
             val intent = Intent(this@Login, RegistroDatos::class.java)
             startActivity(intent)
         }
 
         //Dirigir a la pantalla de Camnbio contra
-
         val link = findViewById<TextView>(R.id.RecCambioContra)
-
         link.setOnClickListener {
             val intent = Intent(this@Login, RecuperarContrasena::class.java)
             startActivity(intent)

@@ -8,8 +8,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
+import android.widget.ImageButton
 import com.example.projecteventclub.R
+import com.example.projecteventclub.atributos.eventos.consultar_evento.activity_consultarEvento
 import com.example.projecteventclub.atributos.eventos.crear_evento.activity_crearEvento
 
 // TODO: Rename parameter arguments, choose names that match
@@ -43,16 +44,14 @@ class activity_adminPrincipal : Fragment() {
         val view = inflater.inflate(R.layout.frag_main_adm, container, false)
 
         // Botón Registrar Asistencia para abrir la camara
-
-        val btnRegistroAsis = view.findViewById<Button>(R.id.BtnRegistroAsis)
+        val btnRegistroAsis = view.findViewById<ImageButton>(R.id.BtnRegistroAsis)
         btnRegistroAsis?.setOnClickListener {
             val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
             startActivity(intent)
         }
 
         // Botón Localizar Evento abre el google maps
-
-        val btnLocalizarEve = view.findViewById<Button>(R.id.BtnlocalizarEve)
+        val btnLocalizarEve = view.findViewById<ImageButton>(R.id.BtnlocalizarEve)
         btnLocalizarEve?.setOnClickListener {
             val gmmIntentUri = Uri.parse("google.navigation:q=4.6097,-74.0817")
             val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
@@ -61,19 +60,33 @@ class activity_adminPrincipal : Fragment() {
         }
 
         // Botón Agregar Evento redirige a crear evento
-
-        val btnAgregarEve = view.findViewById<Button>(R.id.BtnAgregarEve)
+        val btnAgregarEve = view.findViewById<ImageButton>(R.id.BtnAgregarEve)
         btnAgregarEve?.setOnClickListener {
-            val intent = Intent(context, activity_crearEvento::class.java)
-            startActivity(intent)
+            val fragment = activity_crearEvento()
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .addToBackStack(null)
+                .commit()
         }
 
-        // Botón Editar Evento crear evento
-
-        val btnEditarEve = view.findViewById<Button>(R.id.BtnEditarEve)
+        // Botón Editar Evento
+        val btnEditarEve = view.findViewById<ImageButton>(R.id.BtnEditarEve)
         btnEditarEve?.setOnClickListener {
-            val intent = Intent(context, activity_crearEvento::class.java)
-            startActivity(intent)
+            val fragment = activity_crearEvento()
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .addToBackStack(null)
+                .commit()
+        }
+
+        // Botón Consultar Evento
+        val btnConsultarEve = view.findViewById<ImageButton>(R.id.BtnConsultarEve)
+        btnConsultarEve?.setOnClickListener {
+            val fragment = activity_consultarEvento()
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .addToBackStack(null)
+                .commit()
         }
 
         return view
