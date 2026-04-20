@@ -1,10 +1,13 @@
 package com.example.projecteventclub.vista_usuario.main.usuarios
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import com.example.projecteventclub.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -18,6 +21,7 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class activity_usuarioPrincipal : Fragment() {
+    
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -30,14 +34,26 @@ class activity_usuarioPrincipal : Fragment() {
         }
     }
 
+    //boton google maps
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.frag_main_user, container, false)
-    }
+        val view = inflater.inflate(R.layout.frag_main_user, container, false)
 
+        val btnLocEveMuser = view.findViewById<ImageButton>(R.id.btnLocEveMuser)
+        btnLocEveMuser?.setOnClickListener {
+
+            val gmmIntentUri = Uri.parse("google.navigation:q=4.6097,-74.0817")
+            val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+            mapIntent.setPackage("com.google.android.apps.maps")
+            startActivity(mapIntent)
+        }
+
+        return view
+    }
     companion object {
         /**
          * Use this factory method to create a new instance of
