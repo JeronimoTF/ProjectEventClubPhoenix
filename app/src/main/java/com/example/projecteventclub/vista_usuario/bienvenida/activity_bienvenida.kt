@@ -1,25 +1,31 @@
 package com.example.projecteventclub.vista_usuario.bienvenida
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.projecteventclub.R
-import com.example.projecteventclub.vista_usuario.main.admin.activity_adminPrincipal
+import com.example.projecteventclub.auth.login.Login
+import com.google.android.material.button.MaterialButton
+import kotlin.jvm.java
+
 
 class activity_bienvenida : AppCompatActivity() {
+
+    @SuppressLint("WrongViewCast")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_bienvenida)
 
-        // Pasar a la pantalla de admin automáticamente después de 3 segundos
-        Handler(Looper.getMainLooper()).postDelayed({
-            val intent = Intent(this, activity_adminPrincipal::class.java)
+        // Botón comenzar
+        val btnComenzar = findViewById<MaterialButton>(R.id.btnComenzar)
+
+        btnComenzar.setOnClickListener {
+            val intent = Intent(this@activity_bienvenida, Login::class.java)
             startActivity(intent)
-            finish() // Cerramos bienvenida para que no pueda regresar con el botón atrás
-        }, 3000)
+            finish() // evita volver a bienvenida con atrás
+        }
     }
 }
