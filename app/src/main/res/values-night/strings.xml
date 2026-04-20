@@ -82,4 +82,11 @@
     <string name="numero_de_documento">Numero de documento</string>
     <string name="fecha_de_nacimiento">Fecha de Nacimiento</string>
     <string name="siguiente">Siguiente</string>
+    <string name="celular">Celular</string>
+    <string name="correo">Correo</string>
+    <string name="ciudad_de_residencia">Ciudad de Residencia</string>
+    <string name="localidad">Localidad</string>
+    <string name="barrio">Barrio</string>
+    <string name="direcci_n">Direcciòn</string>
+    <string name="siguiente2">Siguiente</string>
 </resources>

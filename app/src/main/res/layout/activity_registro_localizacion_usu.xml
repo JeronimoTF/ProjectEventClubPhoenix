@@ -43,7 +43,7 @@
                 android:id="@+id/etCelular"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Celular"
+                android:hint="@string/celular"
                 android:layout_marginTop="30sp"
                 android:textColor="@color/navbar_background"
                 android:inputType="textPersonName" />
@@ -53,7 +53,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:hint="Correo"
+                android:hint="@string/correo"
                 android:inputType="textPersonName" />
 
             <com.google.android.material.textfield.TextInputEditText
@@ -61,7 +61,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:hint="Ciudad de Residencia"
+                android:hint="@string/ciudad_de_residencia"
                 android:inputType="number" />
 
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
@@ -69,21 +69,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:hint="Localidad" />
+                android:hint="@string/localidad" />
 
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
                 android:id="@+id/spBarrio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:hint="Barrio" />
+                android:hint="@string/barrio" />
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etDireccion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:hint="Direcciòn"
+                android:hint="@string/direcci_n"
                 android:inputType="number" />
 
             <!-- BOTÓN SIGUIENTE -->
@@ -99,7 +99,7 @@
                 android:textStyle="bold"
                 app:strokeColor="@color/navbar_background"
                 app:strokeWidth="3dp"
-                android:text="Siguiente"
+                android:text="@string/siguiente2"
                 android:layout_marginTop="24dp"
                 app:cornerRadius="24dp" />
 
