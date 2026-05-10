@@ -25,7 +25,7 @@ class NuevaContrasena : AppCompatActivity() {
             finish()
         }
 
-        val lnink = findViewById<TextView>(R.id.DescripcionRecCuenta_CorreoElectro)
+        val lnink = findViewById<TextView >(R.id.DescripcionRecCuenta_CorreoElectro)
 
         lnink.setOnClickListener {
             val intent = Intent(this@NuevaContrasena, ErrorCambioContrasena::class.java)
