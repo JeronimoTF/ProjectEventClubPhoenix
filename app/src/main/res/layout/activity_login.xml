@@ -59,7 +59,7 @@
             android:layout_marginTop="24dp"
             android:layout_gravity="center"
 
-            android:text="@string/ingresar_como_usuario"
+            android:text="@string/btningresar"
             android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="@color/navbar_background"
@@ -77,33 +77,6 @@
             app:iconPadding="5dp"
             app:iconSize="24dp"
             app:iconTint="@color/navbar_background"/>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnAnfitrion"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:layout_gravity="center"
-
-            android:text="@string/ingresar_como_anfitrion"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:textColor="@color/navbar_background"
-            android:textAllCaps="false"
-            android:fontFamily="serif"
-            android:gravity="center"
-
-            android:backgroundTint="@color/white"
-            app:cornerRadius="24dp"
-            app:strokeColor="@color/navbar_background"
-            app:strokeWidth="3dp"
-
-            app:icon="@drawable/ic_launcher_foreground"
-            app:iconGravity="textStart"
-            app:iconPadding="5dp"
-            app:iconSize="24dp"
-            app:iconTint="@color/navbar_background"/>
-
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnGoogle"

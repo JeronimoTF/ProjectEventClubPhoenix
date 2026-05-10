@@ -18,9 +18,6 @@
             android:name=".auth.rec_contraseña.ContrasenaCambiadaExitosamente"
             android:exported="false" />
         <activity
-            android:name=".auth.registro.ContrasenaCambiadaExitosamente"
-            android:exported="false" />
-        <activity
             android:name=".auth.rec_contraseña.NuevaContrasena"
             android:exported="false" />
         <activity

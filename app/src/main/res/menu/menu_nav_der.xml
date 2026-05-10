@@ -1,13 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/config_user"
-        android:icon="@android:drawable/ic_menu_preferences"
-        android:title="@string/edit_datos_user"
-        />
 
     <item
-        android:id="@+id/logout_user"
+        android:id="@+id/nav_home"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:title="@string/inicio"/>
+
+    <item
+        android:id="@+id/nav_comida"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:title="@string/comidas"/>
+
+    <item
+        android:id="@+id/nav_anfitrion"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:title="@string/gestion_anfitrion"/>
+
+    <item
+        android:id="@+id/nav_enventosusuario"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:title="@string/mis_eventos"/>
+
+    <item
+        android:id="@+id/nav_perfilusuario"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:title="@string/perfil"/>
+
+    <item
+        android:id="@+id/nav_editarUsuario"
+        android:icon="@android:drawable/ic_menu_preferences"
+        android:title="@string/editar_datos"/>
+
+    <item
+        android:id="@+id/nav_logout"
         android:icon="@android:drawable/ic_lock_power_off"
-        android:title="@string/logout_user" />
+        android:title="@string/cerrar_sesion" />
 </menu>

@@ -1,45 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawer_layout"
-    android:background="@color/white"
-    android:orientation="vertical"
+    android:background="@color/navbar_background"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".vista_usuario.bienvenida.activity_bienvenida">
+    android:padding="25dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/logo"/>
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/navbar_background">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif"
+        android:text="@string/navbar_txt"
+        android:textColor="@color/white"
+        android:layout_marginVertical="20dp"
+        android:layout_marginStart="12dp"
+        android:textSize="25sp"
+        android:textStyle="bold|italic"
+        android:layout_marginTop="10dp"/>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="horizontal" />
-
-            <ImageView
-                android:layout_width="65dp"
-                android:layout_height="65dp"
-                android:src="@drawable/logo"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/navbar_txt"
-                android:textSize="40sp"
-                android:textColor="@color/white"
-                android:layout_marginStart="50dp"/>
-
-        </androidx.appcompat.widget.Toolbar>
-
-    </LinearLayout>
-    
 </LinearLayout>

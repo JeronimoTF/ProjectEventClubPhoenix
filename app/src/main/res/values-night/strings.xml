@@ -109,4 +109,22 @@
     <string name="Contra_guardada_exito">Contraseña guardada exitosamente</string>
     <string name="Error_Cambio_Contra">La contraseña no cumple con los parametros, por favor intente nuevamente</string>
     <string name="btnrecuperar_contrase_a">Recuperar Contraseña</string>
+    <string name="foto_de_perfil">Foto de perfil</string>
+    <string name="inicio">Inicio</string>
+    <string name="bienvenido">Bienvenido</string>
+    <string name="InvitacionPromocional">Consulta los eventos disponibles en los próximos 30 días y adquiere tus entradas a través de la página web oficial o de manera presencial en los puntos autorizados de cada evento.</string>
+    <string name="eventos_pr_ximos">Eventos próximos</string>
+    <string name="bogot">Bogotá</string>
+    <string name="btningresar">Ingresar</string>
+    <string name="cerrar_sesion">Cerrar Sesion</string>
+    <string name="comidas">Comidas</string>
+    <string name="gestion_anfitrion">Gestion anfitrion</string>
+    <string name="mis_eventos">Mis Eventos</string>
+    <string name="editar_datos">Editar datos</string>
+    <string name="perfil_de_usuario">Perfil de usuario</string>
+    <string name="perfil">Perfil de usuario</string>
+    <string name="navigation_drawer_open">menu_abierto</string>
+    <string name="navigation_drawer_close">menu_cerrado</string>
+    <string name="home">Home</string>
+    <string name="editar_perfil">Editar perfil</string>
 </resources>

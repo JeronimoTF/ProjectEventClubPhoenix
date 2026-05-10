@@ -9,7 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import com.example.projecteventclub.R
-import com.example.projecteventclub.atributos.comida.menu.Activity_comidas
+import com.example.projecteventclub.atributos.comida.Activity_comidas
 import com.example.projecteventclub.atributos.eventos.consultar_evento.activity_ConEvUsuario
 
 // TODO: Rename parameter arguments, choose names that match
