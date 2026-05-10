@@ -7,16 +7,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         tools:context=".atributos.pefil.PerfilFragment">
 
-        <TextView
-            android:id="@+id/TituloPerfil"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="serif"
-            android:text="@string/perfil_de_usuario"
-            android:textAlignment="center"
-            android:textColor="@color/navbar_background"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+        @@
 
         <ScrollView
             android:layout_width="match_parent"

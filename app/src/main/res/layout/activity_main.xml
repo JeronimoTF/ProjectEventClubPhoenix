@@ -29,13 +29,13 @@
                     android:layout_width="55dp"
                     android:layout_height="55dp"
                     android:src="@drawable/logo"
-                    android:layout_marginStart="10dp"/>
+                    android:layout_marginStart="5dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="serif"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="8dp"
                     android:text="@string/navbar_txt"
                     android:textColor="@color/white"
                     android:textSize="32sp"
@@ -46,7 +46,8 @@
                     android:layout_height="47dp"
                     app:cardCornerRadius="60dp"
                     app:cardElevation="6dp"
-                    android:layout_marginStart="20dp">
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="8dp">
 
                     <ImageView
                         android:id="@+id/iv_editar_foto"

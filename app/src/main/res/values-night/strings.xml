@@ -127,4 +127,7 @@
     <string name="navigation_drawer_close">menu_cerrado</string>
     <string name="home">Home</string>
     <string name="editar_perfil">Editar perfil</string>
+    <string name="editar_perfil_de_usuario">Editar Perfil de usuario</string>
+    <string name="datos_de_ubicacion">Datos de ubicacion</string>
+    <string name="guardar_cambios">Guardar Cambios</string>
 </resources>
