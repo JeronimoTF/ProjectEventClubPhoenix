@@ -6,13 +6,21 @@
     android:background="@color/white"
     android:orientation="vertical">
 
-
-    <!-- Back Button Row -->
+    <!-- Header con botón volver -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="end">
-
+        android:padding="8dp"
+        android:gravity="center_vertical">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Gestión de Eventos"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp"
+            android:textColor="@color/navbar_background"/>
         <ImageView
             android:id="@+id/btnBackConEveAdm"
             android:layout_width="40dp"
@@ -21,201 +29,224 @@
             app:tint="@color/black" />
     </LinearLayout>
 
-    <!-- Scrollable Content -->
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="24dp">
+            android:padding="16dp">
 
+            <!-- Sección de Búsqueda -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txt_nameevent_consultevent"
-                android:textColor="@color/navbar_background"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/EditTxtNomEveAdm"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:textColor="@color/black"
-                android:textSize="18sp"
-                android:layout_marginBottom="15dp"
-                android:background="@drawable/style_edit_txt"
-                android:paddingStart="10dp"
-                android:paddingEnd="10dp"
-                android:hint="@string/txt_nameevent_consultevent" />
-
-            <!-- Texto informativo -->
-            <TextView
+                android:text="Buscar evento por nombre"
+                android:textStyle="bold"/>
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:gravity="center"
-                android:text="@string/txt_consultevent_description"
-                android:textColor="@color/navbar_background"
-                android:textSize="16sp" />
-
-            <!-- Descripción -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/txt_consultevent_descriptionbox"
-                android:textColor="@color/navbar_background"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/EditTxDesEveAdm"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:orientation="horizontal"
                 android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/style_edit_txt"
-                android:gravity="top"
-                android:padding="12dp"
-                android:hint="@string/txt_consultevent_descriptionbox" />
+                android:layout_marginBottom="16dp">
+                <EditText
+                    android:id="@+id/etBuscarNombre"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:hint="Nombre del evento..."
+                    android:background="@drawable/style_edit_txt"
+                    android:paddingStart="12dp"
+                    android:inputType="text"/>
+                <ImageButton
+                    android:id="@+id/btnBuscarEvento"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@android:drawable/ic_menu_search"
+                    android:background="@drawable/style_buttons"
+                    android:layout_marginStart="8dp"
+                    app:tint="@color/black"/>
+            </LinearLayout>
 
-            <!-- Fecha y Hora -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/txt_consultevent_datetime"
-                android:textColor="@color/navbar_background"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/EditTxtIdEveAdm"
+            <!-- BARRA DE EVENTO SELECCIONADO (Se muestra al encontrar uno) -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardGestionEvento"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/style_edit_txt"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:hint="@string/txt_consultevent_datetime" />
-
-            <!-- ID -->
-            <TextView
-                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txt_vonsultevent_ideventbox"
-                android:textColor="@color/navbar_background"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/EditTxtFecHorEveAdm"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="8dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
                 android:layout_marginBottom="16dp"
-                android:background="@drawable/style_edit_txt"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:hint="@string/txt_vonsultevent_ideventbox" />
+                android:visibility="gone">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+                    <TextView
+                        android:id="@+id/tvEventoSeleccionado"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Nombre del Evento"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textAlignment="center"
+                        android:textColor="@color/navbar_background"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center">
+
+                        <!-- Consultar -->
+                        <LinearLayout
+                            android:id="@+id/llBtnConsultar"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:clickable="true"
+                            android:focusable="true">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@android:drawable/ic_menu_view"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Consultar"
+                                android:textSize="10sp"/>
+                        </LinearLayout>
+
+                        <!-- Editar -->
+                        <LinearLayout
+                            android:id="@+id/llBtnEditar"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:clickable="true"
+                            android:focusable="true">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@android:drawable/ic_menu_edit"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Editar"
+                                android:textSize="10sp"/>
+                        </LinearLayout>
+
+                        <!-- Eliminar -->
+                        <LinearLayout
+                            android:id="@+id/llBtnEliminar"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:clickable="true"
+                            android:focusable="true">
+                            <ImageView
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:src="@android:drawable/ic_menu_delete"
+                                app:tint="#FF0000"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Eliminar"
+                                android:textColor="#FF0000"
+                                android:textSize="10sp"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- SECCIÓN DE DETALLES (Sólo lectura o Edición) -->
+            <LinearLayout
+                android:id="@+id/llDetallesEvento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Descripción"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"/>
+                <EditText
+                    android:id="@+id/etDetalleDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minLines="3"
+                    android:background="@drawable/style_edit_txt"
+                    android:padding="12dp"
+                    android:layout_marginTop="4dp"
+                    android:gravity="top"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fecha y Hora"
+                    android:textStyle="bold"
+                    android:layout_marginTop="16dp"/>
+                <EditText
+                    android:id="@+id/etDetalleFecha"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/style_edit_txt"
+                    android:paddingStart="12dp"
+                    android:layout_marginTop="4dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Lugar"
+                        android:textStyle="bold"/>
+                    <ImageButton
+                        android:id="@+id/btnVerEnMapa"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@android:drawable/ic_dialog_map"
+                        app:tint="@color/navbar_background"
+                        android:contentDescription="Ver en Google Maps"/>
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/etDetalleLugar"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/style_edit_txt"
+                    android:paddingStart="12dp"
+                    android:layout_marginTop="4dp"/>
+
+                <Button
+                    android:id="@+id/btnGuardarCambios"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="24dp"
+                    android:text="GUARDAR CAMBIOS"
+                    android:visibility="gone"
+                    android:backgroundTint="@color/navbar_background"/>
+            </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
-
-    <!-- Bottom Actions Section -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        android:layout_marginBottom="16dp">
-
-        <!-- Localizar -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:id="@+id/btnEliEveAdm"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:background="@drawable/style_buttons"
-                android:src="@android:drawable/ic_menu_mylocation"
-                app:tint="@color/black"
-                android:contentDescription="@string/txt_btn_localizarevent" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:gravity="center"
-                android:text="@string/txt_btn_localizarevent"
-                android:textColor="@color/navbar_background"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <!-- Editar -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:id="@+id/btnLocEveAdm"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:background="@drawable/style_buttons"
-                android:src="@android:drawable/ic_menu_edit"
-                app:tint="@color/black"
-                android:contentDescription="@string/txt_btneditevent" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:gravity="center"
-                android:text="@string/txt_btneditevent"
-                android:textColor="@color/navbar_background"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <!-- Eliminar -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:id="@+id/btnEdiEveAdm"
-                android:layout_width="70dp"
-                android:layout_height="70dp"
-                android:background="@drawable/style_buttons"
-                android:src="@android:drawable/ic_menu_close_clear_cancel"
-                app:tint="@color/black"
-                android:contentDescription="@string/txt_btn_deleteevent" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:gravity="center"
-                android:text="@string/txt_btn_deleteevent"
-                android:textColor="@color/navbar_background"
-                android:textSize="12sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-    </LinearLayout>
 </LinearLayout>
