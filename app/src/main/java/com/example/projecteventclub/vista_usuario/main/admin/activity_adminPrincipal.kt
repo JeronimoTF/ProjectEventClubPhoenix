@@ -12,6 +12,8 @@ import android.widget.ImageButton
 import com.example.projecteventclub.R
 import com.example.projecteventclub.atributos.eventos.consultar_evento.activity_consultarEvento
 import com.example.projecteventclub.atributos.eventos.crear_evento.activity_crearEvento
+import com.example.projecteventclub.atributos.anfitrion.FragmentPedidosPendientes
+import com.example.projecteventclub.atributos.anfitrion.FragmentPedidosEntregados
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -89,8 +91,27 @@ class activity_adminPrincipal : Fragment() {
                 .commit()
         }
 
+        val btnPendientes = view.findViewById<ImageButton>(R.id.BtnPedidosPendientes)
+        btnPendientes?.setOnClickListener {
+            val fragment = FragmentPedidosPendientes()  // ← CORRECTO
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .addToBackStack(null)
+                .commit()
+        }
+
+        val btnEntregados = view.findViewById<ImageButton>(R.id.BtnPedidosEntregados)
+        btnEntregados?.setOnClickListener {
+            val fragment = FragmentPedidosEntregados()  // ← CORRECTO
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .addToBackStack(null)
+                .commit()
+        }
+
         return view
     }
+
 
     companion object {
         /**

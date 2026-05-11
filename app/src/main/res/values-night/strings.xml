@@ -130,4 +130,15 @@
     <string name="editar_perfil_de_usuario">Editar Perfil de usuario</string>
     <string name="datos_de_ubicacion">Datos de ubicacion</string>
     <string name="guardar_cambios">Guardar Cambios</string>
+    <string name="registro_de_asistencia">Registro de asistencia</string>
+    <string name="consultar_evento">Consultar Evento</string>
+    <string name="agregar_evento">Agregar Evento</string>
+    <string name="editar_evento">Editar Evento</string>
+    <string name="localizar_evento">Localizar Evento</string>
+    <string name="pedidos_pendientes">Pedidos Pendientes</string>
+    <string name="pedidos_entregados">Pedidos Entregados</string>
+    <string name="bienvenido_administrador">Bienvenido Administrador</string>
+    <string name="imagen_del_producto">Imagen del producto</string>
+    <string name="agregar">Agregar</string>
+    <string name="bienvenido_anfitrion">Bienvenido Anfitrion</string>
 </resources>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:padding="12dp"
+    android:background="?attr/selectableItemBackground">
+
+    <!-- Nombre y precio -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvNombreItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="#212121"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvPrecioItem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="#1A237E"
+            android:layout_marginTop="2dp"/>
+
+    </LinearLayout>
+
+    <!-- Controles de cantidad -->
+    <ImageButton
+        android:id="@+id/btnMenos"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@android:drawable/ic_input_delete"
+        android:background="@drawable/style_buttons"
+        android:padding="6dp"/>
+
+    <TextView
+        android:id="@+id/tvCantidad"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#212121"/>
+
+    <ImageButton
+        android:id="@+id/btnMas"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:src="@android:drawable/ic_input_add"
+        android:background="@drawable/style_buttons"
+        android:padding="6dp"/>
+
+</LinearLayout>

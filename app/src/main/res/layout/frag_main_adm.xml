@@ -7,7 +7,6 @@
     android:orientation="vertical">
 
 
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -20,11 +19,12 @@
             android:orientation="vertical"
             android:padding="24dp">
 
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
-                android:text="Bienvenido Administrador"
+                android:text="@string/bienvenido_anfitrion"
                 android:textColor="#1A237E"
                 android:textSize="26sp"
                 android:textStyle="bold" />
@@ -64,7 +64,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
                         android:gravity="center"
-                        android:text="Registro de\nasistencia"
+                        android:text="@string/registro_de_asistencia"
                         android:textColor="#1A237E"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -89,7 +89,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
                         android:gravity="center"
-                        android:text="Consultar\nEvento"
+                        android:text="@string/consultar_evento"
                         android:textColor="#1A237E"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -123,7 +123,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:gravity="center"
-                        android:text="Agregar\nEvento"
+                        android:text="@string/agregar_evento"
                         android:textColor="#1A237E"
                         android:textSize="12sp"
                         android:textStyle="bold" />
@@ -148,7 +148,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:gravity="center"
-                        android:text="Editar\nEvento"
+                        android:text="@string/editar_evento"
                         android:textColor="#1A237E"
                         android:textSize="12sp"
                         android:textStyle="bold" />
@@ -173,11 +173,70 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:gravity="center"
-                        android:text="Localizar\nEvento"
+                        android:text="@string/localizar_evento"
                         android:textColor="#1A237E"
                         android:textSize="12sp"
                         android:textStyle="bold" />
                 </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/BtnPedidosPendientes"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:background="@drawable/style_buttons"
+                        android:src="@android:drawable/ic_menu_recent_history"
+                        app:tint="@color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center"
+                        android:text="@string/pedidos_pendientes"
+                        android:textColor="#1A237E"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/BtnPedidosEntregados"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:background="@drawable/style_buttons"
+                        android:src="@android:drawable/checkbox_on_background"
+                        app:tint="@color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center"
+                        android:text="@string/pedidos_entregados"
+                        android:textColor="#1A237E"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
             </LinearLayout>
 
         </LinearLayout>
