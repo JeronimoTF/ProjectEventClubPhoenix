@@ -5,56 +5,47 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import android.widget.ImageView
 import com.example.projecteventclub.R
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [activity_ConEvUsu2.newInstance] factory method to
- * create an instance of this fragment.
- */
 class activity_ConEvUsu2 : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.frag_consult_event_user2, container, false)
-    }
+        val view = inflater.inflate(R.layout.frag_consult_event_user2, container, false)
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment activity_ConEvUsu2.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            activity_ConEvUsu2().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        // 1. Referenciamos los elementos visuales del XML
+        val editNombre = view.findViewById<EditText>(R.id.EditTxtNomEveUsu2)
+        val editFecHor = view.findViewById<EditText>(R.id.EditTxtFecHorEveUsu2)
+        val editDesc = view.findViewById<EditText>(R.id.EditTxtDesEveUsu2)
+        val editLocalidad = view.findViewById<EditText>(R.id.EditTxtLocZonUsu2)
+        val editPisoSilla = view.findViewById<EditText>(R.id.EditTxtPisoSillaUsu2)
+        val btnBack = view.findViewById<ImageView>(R.id.btnBackConEveUsu2)
+
+        // 2. Extraemos los datos de la "maleta" (arguments)
+        val nombre = arguments?.getString("nombre")
+        val descripcion = arguments?.getString("descripcion")
+        val fecha = arguments?.getString("fecha")
+        val hora = arguments?.getString("hora")
+        val lugar = arguments?.getString("lugar")
+        val localidad = arguments?.getString("localidad")
+        val pisoSilla = arguments?.getString("pisoSilla")
+
+        // 3. Ponemos los datos en los cuadros de texto
+        editNombre?.setText(nombre)
+        editFecHor?.setText("$fecha $hora") // Combinamos fecha y hora
+        editDesc?.setText(descripcion)
+        editLocalidad?.setText(localidad ?: "")
+        editPisoSilla?.setText(pisoSilla ?: "")
+
+        // 4. Configuramos el botón de volver
+        btnBack?.setOnClickListener {
+            parentFragmentManager.popBackStack()
+        }
+
+        return view
     }
 }

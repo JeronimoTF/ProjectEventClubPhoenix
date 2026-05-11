@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    >
+    android:background="@color/white">
 
 
     <LinearLayout
@@ -90,6 +90,8 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/style_edit_txt"
                     android:focusable="false"
+                    android:clickable="true"
+                    android:cursorVisible="false"
                     android:paddingStart="16dp"
                     android:paddingEnd="50dp" />
 
@@ -99,7 +101,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:layout_marginEnd="10dp"
-                    android:src="@android:drawable/arrow_down_float"
+                    android:src="@android:drawable/ic_menu_today"
                     app:tint="#808080" />
             </RelativeLayout>
 
@@ -123,6 +125,8 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/style_buttons"
                     android:focusable="false"
+                    android:clickable="true"
+                    android:cursorVisible="false"
                     android:paddingStart="16dp"
                     android:paddingEnd="50dp" />
 
@@ -132,7 +136,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     android:layout_marginEnd="10dp"
-                    android:src="@android:drawable/arrow_down_float"
+                    android:src="@android:drawable/ic_menu_recent_history"
                     app:tint="#808080" />
             </RelativeLayout>
 
