@@ -3,7 +3,7 @@ package com.example.projecteventclub
 import io.github.jan.supabase.createSupabaseClient
 import io.github.jan.supabase.auth.Auth
 import io.github.jan.supabase.postgrest.Postgrest
-import io.github.jan.supabase.realtime.Realtime
+import io.github.jan.supabase.storage.Storage
 
 object SupaBaseClient {
     val client = createSupabaseClient(
@@ -12,6 +12,6 @@ object SupaBaseClient {
     ) {
         install(Postgrest)
         install(Auth)
-        install(Realtime)
+        install(Storage)
     }
 }

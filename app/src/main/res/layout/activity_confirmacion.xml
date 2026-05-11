@@ -24,18 +24,15 @@
                 android:layout_height="110dp"
                 android:layout_marginTop="30dp"
                 android:src="@drawable/logo"
-                android:layout_marginBottom="16dp"
-                android:textColor="@android:color/white"
-                android:textStyle="bold"
-                android:textSize="16sp" />
+                android:layout_marginBottom="16dp" />
 
             <TextView
-                android:id="@+id/tituloDatosUsusLoca"
+                android:id="@+id/tituloConfirmacion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/usuario_creado_exitosamente"
                 android:textStyle="bold"
-                android:textColor="@color/navbar_background"
+                android:textColor="@android:color/white"
                 android:textSize="20sp"
                 android:layout_marginTop="20dp" />
 
@@ -44,10 +41,7 @@
                 android:layout_height="210dp"
                 android:layout_marginTop="30dp"
                 android:src="@drawable/usuario_creado"
-                android:layout_marginBottom="16dp"
-                android:textColor="@android:color/white"
-                android:textStyle="bold"
-                android:textSize="16sp" />
+                android:layout_marginBottom="16dp" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnVolverLogin"

@@ -11,20 +11,27 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import com.example.projecteventclub.atributos.comida.Activity_comidas
 import com.example.projecteventclub.atributos.experiencia.inicio.homeEventFragment
 import com.example.projecteventclub.atributos.pefil.EditarPerfilUsuarioFragment
 import com.example.projecteventclub.atributos.pefil.PerfilFragment
-import com.example.projecteventclub.atributos.pefil.configuraciones.activity_data_modifcation
-import com.example.projecteventclub.vista_usuario.main.usuarios.activity_usuarioPrincipal
+import com.example.projecteventclub.auth.login.Login
+import com.example.projecteventclub.models.UserProfile
 import com.example.projecteventclub.vista_usuario.main.admin.activity_adminPrincipal
-import com.example.projecteventclub.vista_usuario.main.usuarios.fragment_configUser
+import com.example.projecteventclub.vista_usuario.main.usuarios.activity_usuarioPrincipal
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
+import io.github.jan.supabase.auth.auth
+import io.github.jan.supabase.postgrest.postgrest
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import kotlinx.coroutines.Dispatchers
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var drawerLayout: DrawerLayout
+    private lateinit var navView: NavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,23 +40,20 @@ class MainActivity : AppCompatActivity() {
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_nav)
-        val navView = findViewById<NavigationView>(R.id.nav_view)
+        navView = findViewById<NavigationView>(R.id.nav_view)
 
         setSupportActionBar(toolbar)
 
         val toggle = ActionBarDrawerToggle(
-            this,
-            drawerLayout,
-            toolbar,
-            R.string.navigation_drawer_open,
-            R.string.navigation_drawer_close
+            this, drawerLayout, toolbar,
+            R.string.navigation_drawer_open, R.string.navigation_drawer_close
         )
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
-
         toggle.drawerArrowDrawable.color = ContextCompat.getColor(this, R.color.white)
 
-        configurarMenuPorRol(navView.menu)
+        // 1. Consultar el rol y configurar el menú
+        obtenerPerfilYConfigurarMenu()
 
         cargarFragment(homeEventFragment())
         bottomNav.selectedItemId = R.id.nav_home
@@ -75,16 +79,58 @@ class MainActivity : AppCompatActivity() {
             drawerLayout.closeDrawers()
             true
         }
-    } //Cierre  de onCreate
+    }
 
-    private fun configurarMenuPorRol(menu: Menu) {
+    private fun obtenerPerfilYConfigurarMenu() {
+        val userId = SupaBaseClient.client.auth.currentUserOrNull()?.id ?: return
 
-        // Aqui va la Lógica de roles
+        lifecycleScope.launch {
+            try {
+                val profile = withContext(Dispatchers.IO) {
+                    SupaBaseClient.client.postgrest["perfiles"]
+                        .select { filter { eq("id", userId) } }
+                        .decodeSingleOrNull<UserProfile>()
+                }
+                
+                profile?.let {
+                    withContext(Dispatchers.Main) {
+                        configurarMenuPorRol(navView.menu, it.rol ?: "USER")
+                    }
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+    }
+
+    private fun configurarMenuPorRol(menu: Menu, rol: String) {
+        if (rol == "ADMIN") {
+            // El ADMIN no ve "Mis eventos" ni "Comida"
+            menu.findItem(R.id.nav_enventosusuario)?.isVisible = false
+            menu.findItem(R.id.nav_comida)?.isVisible = false
+            // Se asegura de ver "Gestión anfitrión"
+            menu.findItem(R.id.nav_anfitrion)?.isVisible = true
+        } else {
+            // El USER no ve "Gestión anfitrión"
+            menu.findItem(R.id.nav_anfitrion)?.isVisible = false
+            // Se asegura de ver sus opciones
+            menu.findItem(R.id.nav_enventosusuario)?.isVisible = true
+            menu.findItem(R.id.nav_comida)?.isVisible = true
+        }
     }
 
     private fun cerrarSesion() {
-        // Por ahora vacío, sin base de datos
-        Toast.makeText(this, "Sesión cerrada", Toast.LENGTH_SHORT).show()
+        lifecycleScope.launch {
+            try {
+                SupaBaseClient.client.auth.signOut()
+                val intent = Intent(this@MainActivity, Login::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+                finish()
+            } catch (e: Exception) {
+                Toast.makeText(this@MainActivity, "Error al cerrar sesión", Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     private fun cargarFragment(fragment: Fragment) {

@@ -29,10 +29,10 @@ class activity_crearEvento : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.frag_crear_event_adm, container, false)
 
-        // 1. Identificamos todos los campos del formulario por su ID
+        // 1. Identificamos los campos del formulario
         val editTxtNom = view.findViewById<EditText>(R.id.EditTxtNomEveAdm)
         val editTxtDes = view.findViewById<EditText>(R.id.EditTxtDesEveAdm)
-        val editTxtFec = view.findViewById<EditText>(R.id.EditTxtFecEveAdn) // Nota: ID en XML es Adn
+        val editTxtFec = view.findViewById<EditText>(R.id.EditTxtFecEveAdn)
         val editTxtHor = view.findViewById<EditText>(R.id.EditTxtHorEveAdm)
         val editTxtLug = view.findViewById<EditText>(R.id.EditTxtLugEveAdm)
         val btnCrear = view.findViewById<ImageButton>(R.id.btnCreEveAdm)
@@ -43,7 +43,7 @@ class activity_crearEvento : Fragment() {
             parentFragmentManager.popBackStack()
         }
 
-        // 3. Selector de Fecha (DatePickerDialog)
+        // 3. Selector de Fecha
         editTxtFec?.setOnClickListener {
             val c = Calendar.getInstance()
             val year = c.get(Calendar.YEAR)
@@ -51,28 +51,26 @@ class activity_crearEvento : Fragment() {
             val day = c.get(Calendar.DAY_OF_MONTH)
 
             val dpd = DatePickerDialog(requireContext(), { _, selectedYear, selectedMonth, selectedDay ->
-                // Formateamos la fecha seleccionada
                 val fecha = "$selectedDay/${selectedMonth + 1}/$selectedYear"
                 editTxtFec.setText(fecha)
             }, year, month, day)
             dpd.show()
         }
 
-        // 4. Selector de Hora (TimePickerDialog)
+        // 4. Selector de Hora
         editTxtHor?.setOnClickListener {
             val c = Calendar.getInstance()
             val hour = c.get(Calendar.HOUR_OF_DAY)
             val minute = c.get(Calendar.MINUTE)
 
             val tpd = TimePickerDialog(requireContext(), { _, selectedHour, selectedMinute ->
-                // Formateamos la hora para que siempre tenga dos dígitos (ej: 08:05)
                 val hora = String.format("%02d:%02d", selectedHour, selectedMinute)
                 editTxtHor.setText(hora)
             }, hour, minute, true)
             tpd.show()
         }
 
-        // 5. Acción para el campo de Lugar (Abrir Google Maps)
+        // 5. Acción para el campo de Lugar
         editTxtLug?.setOnClickListener {
             if (editTxtLug.text.isNotEmpty()) {
                 val gmmIntentUri = Uri.parse("geo:0,0?q=" + editTxtLug.text.toString())
@@ -82,7 +80,7 @@ class activity_crearEvento : Fragment() {
             }
         }
 
-        // 6. Al hacer clic en el botón de "Check" (Crear Evento)
+        // 6. Al hacer clic en el botón de Crear Evento
         btnCrear?.setOnClickListener {
             val nombre = editTxtNom?.text.toString().trim()
             val descripcion = editTxtDes?.text.toString().trim()
@@ -90,7 +88,6 @@ class activity_crearEvento : Fragment() {
             val hora = editTxtHor?.text.toString().trim()
             val lugar = editTxtLug?.text.toString().trim()
 
-            // Validamos que los campos obligatorios no estén vacíos
             if (nombre.isNotEmpty() && fecha.isNotEmpty() && hora.isNotEmpty() && lugar.isNotEmpty()) {
                 guardarEventoEnBaseDeDatos(nombre, descripcion, fecha, hora, lugar)
             } else {

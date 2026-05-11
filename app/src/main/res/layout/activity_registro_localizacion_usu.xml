@@ -24,10 +24,7 @@
                 android:layout_height="110dp"
                 android:layout_marginTop="30dp"
                 android:src="@drawable/logo"
-                android:layout_marginBottom="16dp"
-                android:textColor="@android:color/white"
-                android:textStyle="bold"
-                android:textSize="16sp" />
+                android:layout_marginBottom="16dp" />
 
             <TextView
                 android:id="@+id/tituloDatosUsusLoca"
@@ -35,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/datos_de_ubicacion_del_usuario"
                 android:textStyle="bold"
-                android:textColor="@color/navbar_background"
+                android:textColor="@android:color/white"
                 android:textSize="20sp"
                 android:layout_marginTop="20dp" />
 
@@ -45,8 +42,9 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/celular"
                 android:layout_marginTop="30sp"
-                android:textColor="@color/navbar_background"
-                android:inputType="textPersonName" />
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white"
+                android:inputType="phone" />
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etCorreo"
@@ -54,7 +52,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:hint="@string/correo"
-                android:inputType="textPersonName" />
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white"
+                android:inputType="textEmailAddress" />
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etCiudadResi"
@@ -62,21 +62,27 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:hint="@string/ciudad_de_residencia"
-                android:inputType="number" />
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white"
+                android:inputType="text" />
 
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
                 android:id="@+id/spLocalidad"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:hint="@string/localidad" />
+                android:hint="@string/localidad"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white" />
 
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
                 android:id="@+id/spBarrio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:hint="@string/barrio" />
+                android:hint="@string/barrio"
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white" />
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etDireccion"
@@ -84,7 +90,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:hint="@string/direcci_n"
-                android:inputType="number" />
+                android:textColor="@android:color/white"
+                android:textColorHint="@android:color/white"
+                android:inputType="text" />
 
             <!-- BOTÓN SIGUIENTE -->
             <com.google.android.material.button.MaterialButton
