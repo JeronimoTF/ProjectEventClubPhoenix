@@ -37,106 +37,121 @@
                 android:textColor="@color/black"
                 android:textSize="14sp" />
 
+            <!-- Paneles de Eventos Dinámicos (Versión Limpia sin imágenes) -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:orientation="horizontal">
 
+                <!-- Card 1 -->
                 <LinearLayout
+                    android:id="@+id/cardEvent1"
                     android:layout_width="0dp"
-                    android:layout_height="200dp"
+                    android:layout_height="140dp"
                     android:layout_margin="8dp"
                     android:layout_weight="1"
                     android:background="@drawable/style_card_event"
                     android:orientation="vertical"
-                    android:padding="12dp">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/txt_event_theater"
-                            android:textColor="@color/white"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentEnd="true"
-                            android:text="@string/txt_date_ej2"
-                            android:textColor="@color/white"
-                            android:textSize="12sp" />
-                    </RelativeLayout>
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:src="@android:drawable/ic_lock_silent_mode"
-                        app:tint="@color/black"
-                        android:contentDescription="@null" />
+                    android:padding="12dp"
+                    android:elevation="4dp"
+                    android:gravity="center_vertical">
 
                     <TextView
+                        android:id="@+id/tvEventName1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@string/txt_advertisement_event"
+                        android:text="Cargando..."
                         android:textColor="@color/white"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:maxLines="2"
+                        android:ellipsize="end"/>
+
+                    <TextView
+                        android:id="@+id/tvEventDate1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tvEventLocation1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="11sp"
+                        android:maxLines="1"
+                        android:ellipsize="end"/>
+
+                    <TextView
+                        android:id="@+id/tvEventTime1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="11sp"
+                        android:textStyle="italic" />
                 </LinearLayout>
 
+                <!-- Card 2 -->
                 <LinearLayout
+                    android:id="@+id/cardEvent2"
                     android:layout_width="0dp"
-                    android:layout_height="200dp"
+                    android:layout_height="140dp"
                     android:layout_margin="8dp"
                     android:layout_weight="1"
                     android:background="@drawable/style_card_event"
                     android:orientation="vertical"
-                    android:padding="12dp">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/txt_event_concert"
-                            android:textColor="@color/white"
-                            android:textSize="18sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentEnd="true"
-                            android:text="@string/txt_date_ej"
-                            android:textColor="@color/white"
-                            android:textSize="12sp" />
-                    </RelativeLayout>
-
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="0dp"
-                        android:layout_weight="1"
-                        android:src="@android:drawable/ic_lock_silent_mode"
-                        app:tint="@color/black"
-                        android:contentDescription="@null" />
+                    android:padding="12dp"
+                    android:elevation="4dp"
+                    android:gravity="center_vertical">
 
                     <TextView
+                        android:id="@+id/tvEventName2"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@string/txt_advertisement_event"
+                        android:text="Cargando..."
                         android:textColor="@color/white"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:maxLines="2"
+                        android:ellipsize="end"/>
+
+                    <TextView
+                        android:id="@+id/tvEventDate2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/tvEventLocation2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="11sp"
+                        android:maxLines="1"
+                        android:ellipsize="end"/>
+
+                    <TextView
+                        android:id="@+id/tvEventTime2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="end"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="11sp"
+                        android:textStyle="italic" />
                 </LinearLayout>
             </LinearLayout>
 

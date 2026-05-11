@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical">
 
+    <!-- Header con botón volver -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="end"
-        android:paddingTop="8dp"
-        android:paddingEnd="16dp">
-
+        android:padding="8dp"
+        android:gravity="center_vertical">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Consulta de Eventos"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp"
+            android:textColor="@color/navbar_background"/>
         <ImageView
             android:id="@+id/btnBackConEveUsu1"
             android:layout_width="40dp"
@@ -22,113 +29,182 @@
             app:tint="@color/black" />
     </LinearLayout>
 
-    <!-- Main Content Area -->
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="32dp">
-
-        <!-- Nombre del evento -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/txt_nameevent_consultevent"
-            android:textColor="@color/navbar_background"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="24dp">
-
-            <EditText
-                android:id="@+id/EditTxtConEveUsu1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/style_edit_txt"
-                android:paddingStart="16dp"
-                android:paddingEnd="60dp"
-                android:hint="@string/txt_nameevent_consultevent"/>
-
-            <ImageView
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="5dp"
-                android:background="@android:drawable/screen_background_light_transparent"
-                android:padding="8dp"
-                android:src="@android:drawable/checkbox_on_background"
-                app:tint="@color/black"
-                android:contentDescription="@null" />
-        </RelativeLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/txt_consultevent_date"
-            android:textColor="@color/navbar_background"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="24dp">
-
-            <EditText
-                android:id="@+id/EditTxtFecEveUsu1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/style_edit_txt"
-                android:paddingStart="16dp"
-                android:paddingEnd="60dp"
-                android:hint="@string/txt_consultevent_date"/>
-
-            <ImageView
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="5dp"
-                android:background="@android:drawable/screen_background_light_transparent"
-                android:padding="8dp"
-                android:src="@android:drawable/checkbox_on_background"
-                app:tint="@color/black"
-                android:contentDescription="@null" />
-        </RelativeLayout>
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="32dp"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="16dp">
 
-            <ImageButton
-                android:id="@+id/btnConEveUsu1"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:background="@drawable/style_buttons"
-                android:scaleType="centerInside"
-                android:src="@android:drawable/ic_menu_search"
-                app:tint="@color/black"
-                android:contentDescription="@string/txt_consult_event" />
-
+            <!-- Sección de Búsqueda -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Buscar evento por nombre"
+                android:textStyle="bold"
+                android:textColor="@color/black"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
                 android:layout_marginTop="8dp"
-                android:text="@string/txt_consult_event"
-                android:gravity="center"
-                android:textColor="@color/navbar_background"
-                android:textSize="14sp"
-                android:textStyle="bold" />
+                android:layout_marginBottom="20dp">
+                <EditText
+                    android:id="@+id/EditTxtConEveUsu1"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:hint="Nombre del evento..."
+                    android:background="@drawable/style_edit_txt"
+                    android:paddingStart="12dp"
+                    android:inputType="text"/>
+                <ImageButton
+                    android:id="@+id/btnConEveUsu1"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@android:drawable/ic_menu_search"
+                    android:background="@drawable/style_buttons"
+                    android:layout_marginStart="8dp"
+                    app:tint="@color/black"/>
+            </LinearLayout>
+
+            <!-- BARRA DE EVENTO SELECCIONADO (Diseño Limpio y Emergente) -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardGestionEventoUsu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="8dp"
+                android:layout_marginBottom="24dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:id="@+id/llBtnConsultarUsu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:gravity="center_vertical"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:background="?attr/selectableItemBackground">
+
+                    <TextView
+                        android:id="@+id/tvEventoSeleccionadoUsu"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Nombre del Evento"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/navbar_background"
+                        android:layout_marginEnd="12dp"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="vertical">
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@android:drawable/ic_menu_view"
+                            app:tint="@color/navbar_background"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Ver Detalles"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/navbar_background"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- SECCIÓN DE DETALLES (Sólo lectura) -->
+            <LinearLayout
+                android:id="@+id/llDetallesEventoUsu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Descripción"
+                    android:textStyle="bold"
+                    android:layout_marginTop="8dp"
+                    android:textColor="@color/black"/>
+                <EditText
+                    android:id="@+id/etDetalleDescUsu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minLines="3"
+                    android:background="@drawable/style_edit_txt"
+                    android:padding="12dp"
+                    android:layout_marginTop="4dp"
+                    android:gravity="top"
+                    android:focusable="false"
+                    android:clickable="false"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fecha y Hora"
+                    android:textStyle="bold"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@color/black"/>
+                <EditText
+                    android:id="@+id/etDetalleFechaUsu"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/style_edit_txt"
+                    android:paddingStart="12dp"
+                    android:layout_marginTop="4dp"
+                    android:focusable="false"
+                    android:clickable="false"
+                    android:textColor="@color/black"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="16dp"
+                    android:gravity="center_vertical">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Lugar"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"/>
+                    <ImageButton
+                        android:id="@+id/btnVerEnMapaUsu"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@android:drawable/ic_dialog_map"
+                        app:tint="@color/navbar_background"
+                        android:contentDescription="Ver en Google Maps"/>
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/etDetalleLugarUsu"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:background="@drawable/style_edit_txt"
+                    android:paddingStart="12dp"
+                    android:layout_marginTop="4dp"
+                    android:focusable="false"
+                    android:clickable="false"
+                    android:textColor="@color/black"/>
+            </LinearLayout>
+
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
 </LinearLayout>

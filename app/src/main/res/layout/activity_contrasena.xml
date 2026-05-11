@@ -24,10 +24,7 @@
                 android:layout_height="110dp"
                 android:layout_marginTop="30dp"
                 android:src="@drawable/logo"
-                android:layout_marginBottom="16dp"
-                android:textColor="@android:color/white"
-                android:textStyle="bold"
-                android:textSize="16sp" />
+                android:layout_marginBottom="16dp" />
 
             <TextView
                 android:id="@+id/tituloDatosUsusLoca"
@@ -35,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/titulocontrase_a"
                 android:textStyle="bold"
-                android:textColor="@color/navbar_background"
+                android:textColor="@android:color/white"
                 android:textSize="20sp"
                 android:layout_marginTop="20dp" />
 
@@ -43,32 +40,37 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                app:endIconMode="password_toggle">
+                app:endIconMode="password_toggle"
+                app:hintTextColor="@android:color/white"
+                android:textColorHint="@android:color/white">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etContra"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/contrase_ausu"
-                android:layout_marginTop="30sp"
-                android:textColor="@color/navbar_background"
-                android:inputType="textPersonName" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etContra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/contrase_ausu"
+                    android:layout_marginTop="30sp"
+                    android:textColor="@android:color/white"
+                    android:inputType="textPassword" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                app:endIconMode="password_toggle">
+                app:endIconMode="password_toggle"
+                app:hintTextColor="@android:color/white"
+                android:textColorHint="@android:color/white">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etRecontra"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:hint="@string/confirmar_contrase_a"
-                android:inputType="textPersonName" />
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etRecontra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:hint="@string/confirmar_contrase_a"
+                    android:textColor="@android:color/white"
+                    android:inputType="textPassword" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
                 android:layout_width="400dp"
@@ -81,9 +83,7 @@
                     android:id="@+id/CheckTerminos"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:buttonTint="@color/navbar_background"
-                    app:strokeColor="@color/navbar_background"
-                    app:strokeWidth="20dp" />
+                    app:buttonTint="@android:color/white" />
 
                 <TextView
                     android:id="@+id/TerminosCondiciones"
@@ -92,12 +92,10 @@
                     android:fontFamily="serif"
                     android:textStyle="bold"
                     android:text="@string/acepta_los_t_rminos_y_condiciones"
-                    android:textColor="@color/navbar_background"
+                    android:textColor="@android:color/white"
                     android:textSize="16sp" />
 
             </LinearLayout>
-
-
 
             <!-- BOTÓN SIGUIENTE -->
             <com.google.android.material.button.MaterialButton

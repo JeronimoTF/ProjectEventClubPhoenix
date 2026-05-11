@@ -1,13 +1,14 @@
 package com.example.projecteventclub.atributos.eventos.consultar_evento
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import android.widget.ImageButton
-import android.widget.Toast
+import android.widget.*
+import androidx.cardview.widget.CardView
 import androidx.lifecycle.lifecycleScope
 import com.example.projecteventclub.R
 import com.example.projecteventclub.SupaBaseClient
@@ -17,68 +18,111 @@ import kotlinx.coroutines.launch
 
 class activity_ConEvUsuario : Fragment() {
 
+    private var eventoActual: Evento? = null
+
+    // Referencias a la UI
+    private lateinit var etBuscarNombre: EditText
+    private lateinit var btnBuscar: ImageButton
+    private lateinit var cardGestion: CardView
+    private lateinit var tvNombreSeleccionado: TextView
+    private lateinit var llConsultar: LinearLayout
+    
+    private lateinit var llDetalles: LinearLayout
+    private lateinit var etDesc: EditText
+    private lateinit var etFecha: EditText
+    private lateinit var etLugar: EditText
+    private lateinit var btnVerEnMapa: ImageButton
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.frag_consult_event_user1, container, false)
 
-        val editNombre = view.findViewById<EditText>(R.id.EditTxtConEveUsu1)
-        val btnBuscar = view.findViewById<ImageButton>(R.id.btnConEveUsu1)
+        // Inicializar vistas
+        etBuscarNombre = view.findViewById(R.id.EditTxtConEveUsu1)
+        btnBuscar = view.findViewById(R.id.btnConEveUsu1)
+        cardGestion = view.findViewById(R.id.cardGestionEventoUsu)
+        tvNombreSeleccionado = view.findViewById(R.id.tvEventoSeleccionadoUsu)
+        llConsultar = view.findViewById(R.id.llBtnConsultarUsu)
+        
+        llDetalles = view.findViewById(R.id.llDetallesEventoUsu)
+        etDesc = view.findViewById(R.id.etDetalleDescUsu)
+        etFecha = view.findViewById(R.id.etDetalleFechaUsu)
+        etLugar = view.findViewById(R.id.etDetalleLugarUsu)
+        btnVerEnMapa = view.findViewById(R.id.btnVerEnMapaUsu)
+        
+        val btnVolver = view.findViewById<ImageView>(R.id.btnBackConEveUsu1)
 
-        btnBuscar?.setOnClickListener {
-            val nombreBuscar = editNombre?.text.toString()
-
-            if (nombreBuscar.isNotEmpty()) {
-                buscarEvento(nombreBuscar)
+        // Acción de búsqueda
+        btnBuscar.setOnClickListener {
+            val nombre = etBuscarNombre.text.toString().trim()
+            if (nombre.isNotEmpty()) {
+                buscarEvento(nombre)
             } else {
-                Toast.makeText(context, "Escribe el nombre del evento para buscar", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "Ingresa un nombre para buscar", Toast.LENGTH_SHORT).show()
             }
         }
 
+        // ACCIÓN: VER DETALLES (Muestra la sección de detalles)
+        llConsultar.setOnClickListener {
+            llDetalles.visibility = View.VISIBLE
+            Toast.makeText(context, "Mostrando detalles", Toast.LENGTH_SHORT).show()
+        }
+
+        // BOTÓN: VER EN MAPA
+        btnVerEnMapa.setOnClickListener {
+            val lugar = etLugar.text.toString().trim()
+            if (lugar.isNotEmpty()) {
+                abrirGoogleMaps(lugar)
+            } else {
+                Toast.makeText(context, "No hay una ubicación definida para este evento", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        btnVolver?.setOnClickListener { parentFragmentManager.popBackStack() }
+
         return view
+    }
+
+    private fun abrirGoogleMaps(ubicacion: String) {
+        val gmmIntentUri = Uri.parse("geo:0,0?q=$ubicacion")
+        val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+        mapIntent.setPackage("com.google.android.apps.maps")
+        
+        if (mapIntent.resolveActivity(requireActivity().packageManager) != null) {
+            startActivity(mapIntent)
+        } else {
+            val webIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/maps/search/?api=1&query=$ubicacion"))
+            startActivity(webIntent)
+        }
     }
 
     private fun buscarEvento(nombre: String) {
         viewLifecycleOwner.lifecycleScope.launch {
             try {
-                // Buscamos en Supabase
-                val eventoEncontrado = SupaBaseClient.client.postgrest["eventos"]
-                    .select {
-                        filter {
-                            eq("nombre", nombre)
-                        }
-                    }.decodeSingleOrNull<Evento>()
+                val evento = SupaBaseClient.client.postgrest["eventos"]
+                    .select { filter { eq("nombre", nombre) } }
+                    .decodeSingleOrNull<Evento>()
 
-                if (eventoEncontrado != null) {
-                    irADetalles(eventoEncontrado)
+                if (evento != null) {
+                    eventoActual = evento
+                    tvNombreSeleccionado.text = evento.nombre
+                    etDesc.setText(evento.descripcion)
+                    etFecha.setText("${evento.fecha} ${evento.hora}")
+                    etLugar.setText(evento.lugar)
+                    
+                    // Mostramos la barra de resultado y ocultamos detalles por ahora
+                    cardGestion.visibility = View.VISIBLE
+                    llDetalles.visibility = View.GONE
                 } else {
-                    Toast.makeText(context, "No se encontró el evento", Toast.LENGTH_SHORT).show()
+                    cardGestion.visibility = View.GONE
+                    llDetalles.visibility = View.GONE
+                    Toast.makeText(context, "Evento no encontrado", Toast.LENGTH_SHORT).show()
                 }
             } catch (e: Exception) {
                 Toast.makeText(context, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
             }
         }
-    }
-
-    private fun irADetalles(evento: Evento) {
-        val fragmentDetalles = activity_ConEvUsu2()
-        
-        // Pasamos todos los datos a la siguiente pantalla
-        val bundle = Bundle()
-        bundle.putString("nombre", evento.nombre)
-        bundle.putString("descripcion", evento.descripcion)
-        bundle.putString("fecha", evento.fecha)
-        bundle.putString("hora", evento.hora)
-        bundle.putString("lugar", evento.lugar)
-        bundle.putString("localidad", evento.localidad)
-        bundle.putString("pisoSilla", evento.pisoSilla)
-        
-        fragmentDetalles.arguments = bundle
-
-        parentFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, fragmentDetalles)
-            .addToBackStack(null)
-            .commit()
     }
 }
