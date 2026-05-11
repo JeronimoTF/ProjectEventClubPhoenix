@@ -22,7 +22,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
-                android:text="@string/bienvenido_administrador"
+                android:text="Bienvenido Administrador"
                 android:textColor="@color/navbar_background"
                 android:textSize="26sp"
                 android:textStyle="bold" />
@@ -42,6 +42,33 @@
                 android:layout_marginTop="60dp"
                 android:gravity="center"
                 android:orientation="horizontal">
+
+                <!-- Registro Asistencia -->
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/BtnRegistroAsis"
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:background="@drawable/style_buttons"
+                        android:src="@drawable/simbolo_qr"
+                        app:tint="@color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center"
+                        android:text="Registro de\nasistencia"
+                        android:textColor="#1A237E"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
 
                 <!-- Consultar Evento -->
                 <LinearLayout
@@ -91,7 +118,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
                         android:gravity="center"
-                        android:text="@string/agregar_evento"
+                        android:text="Agregar\nEvento"
                         android:textColor="@color/navbar_background"
                         android:textSize="13sp"
                         android:textStyle="bold" />

@@ -94,41 +94,53 @@ class MainActivity : AppCompatActivity() {
                         .decodeSingleOrNull<UserProfile>()
                 }
                 
-                profile?.let {
-                    withContext(Dispatchers.Main) {
-                        configurarMenuPorRol(navView.menu, it.rol ?: "USER")
-                    }
+                withContext(Dispatchers.Main) {
+                    configurarMenuPorRol(navView.menu, profile?.rol ?: "USER")
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
+                withContext(Dispatchers.Main) {
+                    configurarMenuPorRol(navView.menu, "USER")
+                }
             }
         }
     }
 
     private fun configurarMenuPorRol(menu: Menu, rol: String) {
-        if (rol == "ADMIN") {
-            // El ADMIN no ve "Mis eventos" ni "Comida"
-            menu.findItem(R.id.nav_enventosusuario)?.isVisible = false
-            menu.findItem(R.id.nav_comida)?.isVisible = false
-            // Se asegura de ver "Gestión anfitrión"
-            menu.findItem(R.id.nav_administrador)?.isVisible = true
-        }
+        val upperRol = rol.uppercase()
 
-        if (rol == "ANFI") {
-            // El ADMIN no ve "Mis eventos" ni "Comida"
-            menu.findItem(R.id.nav_enventosusuario)?.isVisible = false
-            menu.findItem(R.id.nav_comida)?.isVisible = false
-            // Se asegura de ver "Gestión anfitrión"
-            menu.findItem(R.id.nav_anfitrion)?.isVisible = true
-        }
+        // Elementos que SIEMPRE deben ser visibles para todos
+        menu.findItem(R.id.nav_home)?.isVisible = true
+        menu.findItem(R.id.nav_perfilusuario)?.isVisible = true
+        menu.findItem(R.id.nav_editarUsuario)?.isVisible = true
+        menu.findItem(R.id.nav_logout)?.isVisible = true
 
-        else {
-            // El USER no ve "Gestión anfitrión"
-            menu.findItem(R.id.nav_administrador)?.isVisible = false
-            menu.findItem(R.id.nav_anfitrion)?.isVisible = false
-            // Se asegura de ver sus opciones
-            menu.findItem(R.id.nav_enventosusuario)?.isVisible = true
-            menu.findItem(R.id.nav_comida)?.isVisible = true
+        // Diferenciación exacta por rol según requerimiento
+        when (upperRol) {
+            "ADMIN" -> {
+                menu.findItem(R.id.nav_administrador)?.isVisible = true
+                menu.findItem(R.id.nav_anfitrion)?.isVisible = false
+                menu.findItem(R.id.nav_enventosusuario)?.isVisible = false
+                menu.findItem(R.id.nav_comida)?.isVisible = false
+            }
+            "ANFITRION" -> {
+                menu.findItem(R.id.nav_administrador)?.isVisible = false
+                menu.findItem(R.id.nav_anfitrion)?.isVisible = true
+                menu.findItem(R.id.nav_enventosusuario)?.isVisible = false
+                menu.findItem(R.id.nav_comida)?.isVisible = false
+            }
+            "USER", "USUARIO" -> {
+                menu.findItem(R.id.nav_administrador)?.isVisible = false
+                menu.findItem(R.id.nav_anfitrion)?.isVisible = false
+                menu.findItem(R.id.nav_enventosusuario)?.isVisible = true
+                menu.findItem(R.id.nav_comida)?.isVisible = true
+            }
+            else -> { // Por defecto tratamos como usuario
+                menu.findItem(R.id.nav_administrador)?.isVisible = false
+                menu.findItem(R.id.nav_anfitrion)?.isVisible = false
+                menu.findItem(R.id.nav_enventosusuario)?.isVisible = true
+                menu.findItem(R.id.nav_comida)?.isVisible = true
+            }
         }
     }
 
