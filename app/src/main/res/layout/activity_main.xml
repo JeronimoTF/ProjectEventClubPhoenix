@@ -54,7 +54,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/ic_user"
+                        android:src="@drawable/user_logo"
                         android:contentDescription="@string/foto_de_perfil" />
 
                 </androidx.cardview.widget.CardView>

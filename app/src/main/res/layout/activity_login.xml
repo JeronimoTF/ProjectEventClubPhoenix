@@ -53,7 +53,7 @@
 
     <!-- BOTONES -->
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnUsuario"
+            android:id="@+id/btnIngresar"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
