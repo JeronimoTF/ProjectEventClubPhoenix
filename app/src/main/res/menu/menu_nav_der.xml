@@ -12,6 +12,11 @@
         android:title="@string/comidas"/>
 
     <item
+        android:id="@+id/nav_administrador"
+        android:icon="@drawable/sharp_diversity_3_24"
+        android:title="@string/gestion_administrador"/>
+
+    <item
         android:id="@+id/nav_anfitrion"
         android:icon="@drawable/sharp_diversity_3_24"
         android:title="@string/gestion_anfitrion"/>

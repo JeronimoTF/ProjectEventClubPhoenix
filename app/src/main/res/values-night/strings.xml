@@ -141,4 +141,5 @@
     <string name="imagen_del_producto">Imagen del producto</string>
     <string name="agregar">Agregar</string>
     <string name="bienvenido_anfitrion">Bienvenido Anfitrion</string>
+    <string name="gestion_administrador">Gestion Administrador</string>
 </resources>

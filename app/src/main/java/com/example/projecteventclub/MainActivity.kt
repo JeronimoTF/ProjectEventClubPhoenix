@@ -19,6 +19,7 @@ import com.example.projecteventclub.atributos.pefil.PerfilFragment
 import com.example.projecteventclub.auth.login.Login
 import com.example.projecteventclub.models.UserProfile
 import com.example.projecteventclub.vista_usuario.main.admin.activity_adminPrincipal
+import com.example.projecteventclub.vista_usuario.main.anfitrion.FragmentMainAnfitrion
 import com.example.projecteventclub.vista_usuario.main.usuarios.activity_usuarioPrincipal
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
@@ -70,10 +71,11 @@ class MainActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.nav_home -> cargarFragment(homeEventFragment())
                 R.id.nav_comida -> cargarFragment(Activity_comidas())
-                R.id.nav_anfitrion -> cargarFragment(activity_adminPrincipal())
+                R.id.nav_anfitrion -> cargarFragment(FragmentMainAnfitrion())
                 R.id.nav_enventosusuario -> cargarFragment(activity_usuarioPrincipal())
                 R.id.nav_perfilusuario -> cargarFragment(PerfilFragment())
                 R.id.nav_editarUsuario -> cargarFragment(EditarPerfilUsuarioFragment())
+                R.id.nav_administrador -> cargarFragment(activity_adminPrincipal())
                 R.id.nav_logout -> cerrarSesion()
             }
             drawerLayout.closeDrawers()
