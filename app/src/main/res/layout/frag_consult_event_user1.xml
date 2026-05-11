@@ -43,9 +43,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Buscar evento por nombre"
+                android:text="@string/buscar_evento_por_nombre"
                 android:textStyle="bold"
-                android:textColor="@color/black"/>
+                android:textColor="@color/navbar_background"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -57,7 +57,8 @@
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_weight="1"
-                    android:hint="Nombre del evento..."
+                    android:hint="@string/nombre_del_evento"
+                    android:textColor="@color/navbar_background"
                     android:background="@drawable/style_edit_txt"
                     android:paddingStart="12dp"
                     android:inputType="text"/>

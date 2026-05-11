@@ -24,10 +24,10 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Pedidos Pendientes"
+            android:text="@string/pedidos_pendientes"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="#1A237E"/>
+            android:textColor="@color/navbar_background"/>
 
     </LinearLayout>
 
@@ -36,7 +36,7 @@
         android:id="@+id/tvSinPedidos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="No hay pedidos pendientes"
+        android:text="@string/no_hay_pedidos_pendientes"
         android:gravity="center"
         android:textSize="16sp"
         android:textColor="#9E9E9E"

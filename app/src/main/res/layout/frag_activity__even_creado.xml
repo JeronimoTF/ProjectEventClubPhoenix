@@ -36,8 +36,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="¡Perfecto, ya haz registrado tú evento, ahora podras consultarlo en breve junto a su respectivo ID y código QR!"
-            android:textColor="@color/black"
+            android:text="@string/perfecto_ya_haz_registrado_t_evento_ahora_podras_consultarlo_en_breve_junto_a_su_respectivo_id_y_c_digo_qr"
+            android:textColor="@color/navbar_background"
             android:textSize="20sp"
             android:textStyle="bold" />
 

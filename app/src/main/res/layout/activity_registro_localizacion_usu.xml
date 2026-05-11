@@ -32,7 +32,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/datos_de_ubicacion_del_usuario"
                 android:textStyle="bold"
-                android:textColor="@android:color/white"
+                android:textColor="@color/navbar_background"
                 android:textSize="20sp"
                 android:layout_marginTop="20dp" />
 
@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/celular"
                 android:layout_marginTop="30sp"
-                android:textColor="@android:color/white"
+                android:textColor="@color/navbar_background"
                 android:textColorHint="@android:color/white"
                 android:inputType="phone" />
 
@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:hint="@string/correo"
-                android:textColor="@android:color/white"
+                android:textColor="@color/navbar_background"
                 android:textColorHint="@android:color/white"
                 android:inputType="textEmailAddress" />
 
@@ -62,7 +62,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:hint="@string/ciudad_de_residencia"
-                android:textColor="@android:color/white"
+                android:textColor="@color/navbar_background"
                 android:textColorHint="@android:color/white"
                 android:inputType="text" />
 
@@ -72,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:hint="@string/localidad"
-                android:textColor="@android:color/white"
+                android:textColor="@color/navbar_background"
                 android:textColorHint="@android:color/white" />
 
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
@@ -81,7 +81,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:hint="@string/barrio"
-                android:textColor="@android:color/white"
+                android:textColor="@color/navbar_background"
                 android:textColorHint="@android:color/white" />
 
             <com.google.android.material.textfield.TextInputEditText
@@ -90,7 +90,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:hint="@string/direcci_n"
-                android:textColor="@android:color/white"
+                android:textColor="@color/navbar_background"
                 android:textColorHint="@android:color/white"
                 android:inputType="text" />
 

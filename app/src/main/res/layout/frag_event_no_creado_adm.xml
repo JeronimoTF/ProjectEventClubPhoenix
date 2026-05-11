@@ -72,7 +72,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/txt_wrongadd_eventdescription"
-            android:textColor="@color/black"
+            android:textColor="@color/navbar_background"
             android:textSize="20sp"
             android:textStyle="bold" />
 

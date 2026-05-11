@@ -150,5 +150,10 @@
     <string name="agregar">Agregar</string>
     <string name="bienvenido_anfitrion">Bienvenido Anfitrion</string>
     <string name="gestion_administrador">Gestion Administrador</string>
+    <string name="no_hay_pedidos_pendientes">No hay pedidos pendientes</string>
+    <string name="perfecto_ya_haz_registrado_t_evento_ahora_podras_consultarlo_en_breve_junto_a_su_respectivo_id_y_c_digo_qr">¡Perfecto, ya haz registrado tú evento, ahora podras consultarlo en breve junto a su respectivo ID y código QR!</string>
+    <string name="nombre_del_evento">Nombre del evento...</string>
+    <string name="buscar_evento_por_nombre">Buscar evento por nombre</string>
+    <string name="consultar">Consultar</string>
 
 </resources>
