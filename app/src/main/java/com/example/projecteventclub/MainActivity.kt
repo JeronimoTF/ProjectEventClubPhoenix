@@ -111,9 +111,20 @@ class MainActivity : AppCompatActivity() {
             menu.findItem(R.id.nav_enventosusuario)?.isVisible = false
             menu.findItem(R.id.nav_comida)?.isVisible = false
             // Se asegura de ver "Gestión anfitrión"
+            menu.findItem(R.id.nav_administrador)?.isVisible = true
+        }
+
+        if (rol == "ANFI") {
+            // El ADMIN no ve "Mis eventos" ni "Comida"
+            menu.findItem(R.id.nav_enventosusuario)?.isVisible = false
+            menu.findItem(R.id.nav_comida)?.isVisible = false
+            // Se asegura de ver "Gestión anfitrión"
             menu.findItem(R.id.nav_anfitrion)?.isVisible = true
-        } else {
+        }
+
+        else {
             // El USER no ve "Gestión anfitrión"
+            menu.findItem(R.id.nav_administrador)?.isVisible = false
             menu.findItem(R.id.nav_anfitrion)?.isVisible = false
             // Se asegura de ver sus opciones
             menu.findItem(R.id.nav_enventosusuario)?.isVisible = true
