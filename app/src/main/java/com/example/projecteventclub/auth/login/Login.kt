@@ -8,6 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.projecteventclub.MainActivity
 import com.example.projecteventclub.R
+import com.example.projecteventclub.auth.rec_contrasena.RecuperarContrasena
 import com.example.projecteventclub.auth.rec_contraseña.RecuperarContrasena
 import com.example.projecteventclub.auth.registro.RegistroDatos
 
@@ -21,9 +22,18 @@ class Login : AppCompatActivity() {
         val btn2: Button = findViewById(R.id.btnUsuario)
         btn2.setOnClickListener {
             val intent = Intent(this@Login, MainActivity::class.java)
+            intent.putExtra("USER_TYPE", "USER")
             startActivity(intent)
             finish()
+        }
 
+        // Botón ingresar como anfitrion
+        val btn3: Button = findViewById(R.id.btnAnfitrion)
+        btn3.setOnClickListener {
+            val intent = Intent(this@Login, MainActivity::class.java)
+            intent.putExtra("USER_TYPE", "ADMIN")
+            startActivity(intent)
+            finish()
         }
 
         val btn4: Button = findViewById(R.id.btnGoogle)

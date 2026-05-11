@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,19 +14,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectEventClub">
         <activity
-            android:name=".auth.rec_contraseña.ErrorCambioContrasena"
+            android:name=".auth.rec_contrasena.ErrorCambioContrasena"
             android:exported="false" />
         <activity
-            android:name=".auth.rec_contraseña.ContrasenaCambiadaExitosamente"
+            android:name=".auth.rec_contrasena.ContrasenaCambiadaExitosamente"
             android:exported="false" />
         <activity
-            android:name=".auth.rec_contraseña.NuevaContrasena"
+            android:name=".auth.rec_contrasena.NuevaContrasena"
             android:exported="false" />
         <activity
-            android:name=".auth.rec_contraseña.CodigoVerificacion"
+            android:name=".auth.rec_contrasena.CodigoVerificacion"
             android:exported="false" />
         <activity
-            android:name=".auth.rec_contraseña.RecuperarContrasena"
+            android:name=".auth.rec_contrasena.RecuperarContrasena"
             android:exported="false" />
         <activity
             android:name=".auth.registro.Confirmacion"

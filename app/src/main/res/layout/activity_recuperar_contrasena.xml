@@ -24,10 +24,7 @@
                 android:layout_height="110dp"
                 android:layout_marginTop="30dp"
                 android:src="@drawable/logo"
-                android:layout_marginBottom="16dp"
-                android:textColor="@android:color/white"
-                android:textStyle="bold"
-                android:textSize="16sp" />
+                android:layout_marginBottom="16dp" />
 
             <TextView
                 android:id="@+id/tituloREcContra"
@@ -39,16 +36,19 @@
                 android:textSize="20sp"
                 android:layout_marginTop="20dp" />
 
-
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etContra"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/correo_electronico_RecContra"
-                    android:layout_marginTop="30sp"
                     android:textColor="@color/navbar_background"
-                    android:inputType="textPersonName" />
+                    android:inputType="textEmailAddress" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <!-- BOTÓN SIGUIENTE -->
             <com.google.android.material.button.MaterialButton
@@ -64,7 +64,7 @@
                 app:strokeColor="@color/navbar_background"
                 app:strokeWidth="3dp"
                 android:text="@string/enviar_codigo"
-                android:layout_marginTop="150dp"
+                android:layout_marginTop="100dp"
                 app:cornerRadius="24dp" />
 
             <TextView
@@ -72,7 +72,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="serif"
-                android:layout_marginTop="120sp"
+                android:layout_marginTop="80dp"
                 android:text="@string/correoElectr_RecCuenta_Info"
                 android:textAlignment="center"
                 android:textColor="@color/navbar_background"
