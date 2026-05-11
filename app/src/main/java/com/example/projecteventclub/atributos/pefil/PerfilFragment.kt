@@ -1,60 +1,104 @@
 package com.example.projecteventclub.atributos.pefil
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
+import coil.load
+import coil.transform.CircleCropTransformation
 import com.example.projecteventclub.R
+import com.example.projecteventclub.SupaBaseClient
+import com.example.projecteventclub.models.UserProfile
+import io.github.jan.supabase.auth.auth
+import io.github.jan.supabase.postgrest.postgrest
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [PerfilFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class PerfilFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var ivFotoPerfil: ImageView
+    private lateinit var tvNombre: TextView
+    private lateinit var tvRol: TextView
+    private lateinit var tvCorreo: TextView
+    private lateinit var btnEditar: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_perfil, container, false)
+        val view = inflater.inflate(R.layout.fragment_perfil, container, false)
+
+        // Inicializar vistas
+        ivFotoPerfil = view.findViewById(R.id.iv_foto_perfil)
+        tvNombre = view.findViewById(R.id.tv_perfil_nombre)
+        tvRol = view.findViewById(R.id.tv_perfil_rol)
+        tvCorreo = view.findViewById(R.id.tv_perfil_correo)
+        btnEditar = view.findViewById(R.id.btn_editar_perfil)
+
+        // Botón para ir a editar perfil
+        btnEditar.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, EditarPerfilUsuarioFragment())
+                .addToBackStack(null)
+                .commit()
+        }
+
+        // Cargar datos del usuario
+        obtenerDatosPerfil()
+
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment PerfilFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            PerfilFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    private fun obtenerDatosPerfil() {
+        val user = SupaBaseClient.client.auth.currentUserOrNull() ?: return
+        val userId = user.id
+
+        lifecycleScope.launch {
+            try {
+                // Consultamos el perfil en la tabla de Supabase
+                val profile = withContext(Dispatchers.IO) {
+                    SupaBaseClient.client.postgrest["perfiles"]
+                        .select {
+                            filter { eq("id", userId) }
+                        }.decodeSingleOrNull<UserProfile>()
+                }
+
+                profile?.let {
+                    withContext(Dispatchers.Main) {
+                        // Concatenamos nombres y apellidos
+                        val nombreCompleto = "${it.nombres ?: ""} ${it.apellidos ?: ""}".trim()
+                        tvNombre.text = if (nombreCompleto.isNotEmpty()) nombreCompleto else "Usuario sin nombre"
+                        
+                        // Mostramos el rol (ADMIN o USER)
+                        tvRol.text = it.rol ?: "USER"
+                        
+                        // Mostramos el correo
+                        tvCorreo.text = it.correo ?: user.email ?: "Sin correo"
+
+                        // Cargamos la foto con Coil si existe
+                        if (!it.avatar_url.isNullOrEmpty()) {
+                            ivFotoPerfil.load(it.avatar_url) {
+                                transformations(CircleCropTransformation())
+                                placeholder(R.drawable.ic_user)
+                                error(R.drawable.ic_user)
+                            }
+                        }
+                    }
+                }
+            } catch (e: Exception) {
+                Log.e("PerfilFragment", "Error cargando datos: ${e.message}")
+                withContext(Dispatchers.Main) {
+                    Toast.makeText(context, "Error al cargar la información", Toast.LENGTH_SHORT).show()
                 }
             }
+        }
     }
 }
