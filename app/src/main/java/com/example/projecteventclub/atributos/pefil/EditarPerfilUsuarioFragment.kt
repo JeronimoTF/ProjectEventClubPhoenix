@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import coil.load
 import coil.transform.CircleCropTransformation
+import com.example.projecteventclub.MainActivity
 import com.example.projecteventclub.R
 import com.example.projecteventclub.SupaBaseClient
 import com.example.projecteventclub.models.UserProfile
@@ -43,8 +44,8 @@ class EditarPerfilUsuarioFragment : Fragment() {
     private lateinit var etCelular: TextInputEditText
     private lateinit var etCorreo: TextInputEditText
     private lateinit var etCiudad: TextInputEditText
-    private lateinit var spLocalidad: MaterialAutoCompleteTextView
-    private lateinit var spBarrio: MaterialAutoCompleteTextView
+    private lateinit var etLocalidad: TextInputEditText
+    private lateinit var etBarrio: TextInputEditText
     private lateinit var etDireccion: TextInputEditText
     private lateinit var etContra: TextInputEditText
     private lateinit var btnGuardar: Button
@@ -78,8 +79,8 @@ class EditarPerfilUsuarioFragment : Fragment() {
         etCelular = view.findViewById(R.id.etCelular)
         etCorreo = view.findViewById(R.id.etCorreo)
         etCiudad = view.findViewById(R.id.etCiudadResi)
-        spLocalidad = view.findViewById(R.id.spLocalidad)
-        spBarrio = view.findViewById(R.id.spBarrio)
+        etLocalidad = view.findViewById(R.id.etLocalidad)
+        etBarrio = view.findViewById(R.id.etBarrio)
         etDireccion = view.findViewById(R.id.etDireccion)
         etContra = view.findViewById(R.id.etContra)
         btnGuardar = view.findViewById(R.id.btnGuardarCambios)
@@ -95,7 +96,6 @@ class EditarPerfilUsuarioFragment : Fragment() {
 
         lifecycleScope.launch {
             try {
-                // Usamos select() y decodeSingleOrNull para evitar crasheos si no hay datos aún
                 val profile = withContext(Dispatchers.IO) {
                     SupaBaseClient.client.postgrest["perfiles"]
                         .select { filter { eq("id", userId) } }
@@ -115,8 +115,8 @@ class EditarPerfilUsuarioFragment : Fragment() {
                         etCelular.setText(profile.celular ?: "")
                         etCorreo.setText(profile.correo ?: user.email ?: "")
                         etCiudad.setText(profile.ciudad ?: "")
-                        spLocalidad.setText(profile.localidad ?: "", false)
-                        spBarrio.setText(profile.barrio ?: "", false)
+                        etLocalidad.setText(profile.localidad ?: "")
+                        etBarrio.setText(profile.barrio ?: "")
                         etDireccion.setText(profile.direccion ?: "")
                         
                         if (!profile.avatar_url.isNullOrEmpty()) {
@@ -127,11 +127,6 @@ class EditarPerfilUsuarioFragment : Fragment() {
                             }
                         }
                     }
-                } else {
-                    withContext(Dispatchers.Main) {
-                        etCorreo.setText(user.email ?: "")
-                        Toast.makeText(context, "Por favor, completa tu perfil", Toast.LENGTH_SHORT).show()
-                    }
                 }
             } catch (e: Exception) {
                 Log.e("EditarPerfil", "Error al cargar: ${e.message}")
@@ -141,10 +136,6 @@ class EditarPerfilUsuarioFragment : Fragment() {
 
     private fun validateInputs(): Boolean {
         if (etNombres.text.isNullOrBlank()) { etNombres.error = "Requerido"; return false }
-        val email = etCorreo.text.toString().trim()
-        if (email.isEmpty() || !Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            etCorreo.error = "Email inválido"; return false
-        }
         return true
     }
 
@@ -160,9 +151,8 @@ class EditarPerfilUsuarioFragment : Fragment() {
                         requireContext().contentResolver.openInputStream(uri)?.readBytes()
                     }
                     if (bytes != null) {
-                        val fileName = "avatars/$userId.jpg"
+                        val fileName = "$userId/avatar.jpg"
                         withContext(Dispatchers.IO) {
-                            // Sube la imagen reemplazando la anterior
                             SupaBaseClient.client.storage.from("fotos_perfil").upload(fileName, bytes) {
                                 upsert = true
                             }
@@ -183,25 +173,18 @@ class EditarPerfilUsuarioFragment : Fragment() {
                     celular = etCelular.text.toString().trim(),
                     correo = etCorreo.text.toString().trim(),
                     ciudad = etCiudad.text.toString().trim(),
-                    localidad = spLocalidad.text.toString().trim(),
-                    barrio = spBarrio.text.toString().trim(),
+                    localidad = etLocalidad.text.toString().trim(),
+                    barrio = etBarrio.text.toString().trim(),
                     direccion = etDireccion.text.toString().trim(),
                     avatar_url = avatarUrl
                 )
 
                 withContext(Dispatchers.IO) {
-                    // Actualiza o inserta el perfil
                     SupaBaseClient.client.postgrest["perfiles"].upsert(updatedProfile)
                 }
 
-                val pass = etContra.text.toString()
-                if (pass.isNotBlank()) {
-                    withContext(Dispatchers.IO) {
-                        SupaBaseClient.client.auth.updateUser { password = pass }
-                    }
-                }
-
                 withContext(Dispatchers.Main) {
+                    (activity as? MainActivity)?.actualizarInterfaz()
                     Toast.makeText(context, "Perfil actualizado correctamente", Toast.LENGTH_SHORT).show()
                     parentFragmentManager.popBackStack()
                 }

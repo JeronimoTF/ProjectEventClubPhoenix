@@ -50,7 +50,8 @@
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/style_edit_txt"
                 android:paddingStart="16dp"
-                android:paddingEnd="16dp" />
+                android:paddingEnd="16dp"
+                android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -68,7 +69,8 @@
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/style_edit_txt"
                 android:gravity="top"
-                android:padding="12dp" />
+                android:padding="12dp"
+                android:textColor="@color/black" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -93,7 +95,8 @@
                     android:clickable="true"
                     android:cursorVisible="false"
                     android:paddingStart="16dp"
-                    android:paddingEnd="50dp" />
+                    android:paddingEnd="50dp"
+                    android:textColor="@color/black" />
 
                 <ImageView
                     android:layout_width="35dp"
@@ -102,7 +105,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginEnd="10dp"
                     android:src="@android:drawable/ic_menu_today"
-                    app:tint="#808080" />
+                    app:tint="@color/black" />
             </RelativeLayout>
 
             <TextView
@@ -128,7 +131,8 @@
                     android:clickable="true"
                     android:cursorVisible="false"
                     android:paddingStart="16dp"
-                    android:paddingEnd="50dp" />
+                    android:paddingEnd="50dp"
+                    android:textColor="@color/black" />
 
                 <ImageView
                     android:layout_width="35dp"
@@ -137,7 +141,7 @@
                     android:layout_centerVertical="true"
                     android:layout_marginEnd="10dp"
                     android:src="@android:drawable/ic_menu_recent_history"
-                    app:tint="#808080" />
+                    app:tint="@color/black" />
             </RelativeLayout>
 
             <!-- Lugar -->
@@ -157,7 +161,8 @@
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/style_edit_txt"
                 android:paddingStart="16dp"
-                android:paddingEnd="16dp" />
+                android:paddingEnd="16dp"
+                android:textColor="@color/black" />
 
         </LinearLayout>
     </ScrollView>

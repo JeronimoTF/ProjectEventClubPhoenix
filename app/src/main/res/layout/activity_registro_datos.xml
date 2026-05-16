@@ -41,7 +41,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/nombres"
                 android:layout_marginTop="30sp"
-                android:textColor="@color/navbar_background"
+                android:textColor="@android:color/black"
                 android:textColorHint="@android:color/white"
                 android:inputType="textPersonName" />
 
@@ -51,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:hint="@string/apellidos"
-                android:textColor="@color/navbar_background"
+                android:textColor="@android:color/black"
                 android:textColorHint="@android:color/white"
                 android:inputType="textPersonName" />
 
@@ -61,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:hint="@string/edad"
-                android:textColor="@color/navbar_background"
+                android:textColor="@android:color/black"
                 android:textColorHint="@android:color/white"
                 android:inputType="number" />
 
@@ -71,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:hint="@string/genero"
-                android:textColor="@color/navbar_background"
+                android:textColor="@android:color/black"
                 android:textColorHint="@android:color/white" />
 
             <com.google.android.material.textfield.MaterialAutoCompleteTextView
@@ -80,7 +80,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:hint="@string/tipo_de_documento"
-                android:textColor="@color/navbar_background"
+                android:textColor="@android:color/black"
                 android:textColorHint="@android:color/white" />
 
             <com.google.android.material.textfield.TextInputEditText
@@ -89,7 +89,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:hint="@string/numero_de_documento"
-                android:textColor="@color/navbar_background"
+                android:textColor="@android:color/black"
                 android:textColorHint="@android:color/white"
                 android:inputType="number" />
 
@@ -99,7 +99,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:hint="@string/fecha_de_nacimiento"
-                android:textColor="@color/navbar_background"
+                android:textColor="@android:color/black"
                 android:textColorHint="@android:color/white"
                 android:focusable="false" />
 

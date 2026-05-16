@@ -39,7 +39,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/txt_nameevent_consultevent"
-                android:textColor="@color/navbar_background"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -48,6 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:textColor="@color/black"
+                android:textColorHint="#808080"
                 android:textSize="18sp"
                 android:layout_marginBottom="15dp"
                 android:background="@drawable/style_edit_txt"
@@ -60,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/txt_consultevent_datetime"
-                android:textColor="@color/navbar_background"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -73,6 +74,8 @@
                 android:background="@drawable/style_edit_txt"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
+                android:textColor="@color/black"
+                android:textColorHint="#808080"
                 android:hint="@string/txt_consultevent_datetime" />
 
             <!-- Descripción -->
@@ -80,7 +83,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/txt_consultevent_descriptionbox"
-                android:textColor="@color/navbar_background"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -93,6 +96,8 @@
                 android:background="@drawable/style_edit_txt"
                 android:gravity="top"
                 android:padding="12dp"
+                android:textColor="@color/black"
+                android:textColorHint="#808080"
                 android:hint="@string/txt_consultevent_descriptionbox" />
 
             <!-- Localidad - zona -->
@@ -100,7 +105,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/txt_consultevent_localidad"
-                android:textColor="@color/navbar_background"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -113,6 +118,8 @@
                 android:background="@drawable/style_edit_txt"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
+                android:textColor="@color/black"
+                android:textColorHint="#808080"
                 android:hint="@string/txt_consultevent_localidad" />
 
             <!-- Piso - Silla -->
@@ -120,7 +127,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/txt_consultevent_chair"
-                android:textColor="@color/navbar_background"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -133,6 +140,8 @@
                 android:background="@drawable/style_edit_txt"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
+                android:textColor="@color/black"
+                android:textColorHint="#808080"
                 android:hint="@string/txt_consultevent_chair"/>
         </LinearLayout>
     </ScrollView>

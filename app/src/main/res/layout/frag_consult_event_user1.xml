@@ -20,7 +20,7 @@
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginStart="16dp"
-            android:textColor="@color/navbar_background"/>
+            android:textColor="@color/black"/>
         <ImageView
             android:id="@+id/btnBackConEveUsu1"
             android:layout_width="40dp"
@@ -45,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/buscar_evento_por_nombre"
                 android:textStyle="bold"
-                android:textColor="@color/navbar_background"/>
+                android:textColor="@color/black"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -58,7 +58,8 @@
                     android:layout_height="50dp"
                     android:layout_weight="1"
                     android:hint="@string/nombre_del_evento"
-                    android:textColor="@color/navbar_background"
+                    android:textColor="@color/black"
+                    android:textColorHint="#808080"
                     android:background="@drawable/style_edit_txt"
                     android:paddingStart="12dp"
                     android:inputType="text"/>
@@ -72,7 +73,7 @@
                     app:tint="@color/black"/>
             </LinearLayout>
 
-            <!-- BARRA DE EVENTO SELECCIONADO (Diseño Limpio y Emergente) -->
+            <!-- BARRA DE EVENTO SELECCIONADO -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardGestionEventoUsu"
                 android:layout_width="match_parent"
@@ -101,7 +102,7 @@
                         android:text="Nombre del Evento"
                         android:textSize="18sp"
                         android:textStyle="bold"
-                        android:textColor="@color/navbar_background"
+                        android:textColor="@color/black"
                         android:layout_marginEnd="12dp"/>
 
                     <LinearLayout
@@ -113,19 +114,19 @@
                             android:layout_width="32dp"
                             android:layout_height="32dp"
                             android:src="@android:drawable/ic_menu_view"
-                            app:tint="@color/navbar_background"/>
+                            app:tint="@color/black"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Ver Detalles"
                             android:textSize="10sp"
                             android:textStyle="bold"
-                            android:textColor="@color/navbar_background"/>
+                            android:textColor="@color/black"/>
                     </LinearLayout>
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- SECCIÓN DE DETALLES (Sólo lectura) -->
+            <!-- SECCIÓN DE DETALLES -->
             <LinearLayout
                 android:id="@+id/llDetallesEventoUsu"
                 android:layout_width="match_parent"
@@ -190,7 +191,7 @@
                         android:layout_height="40dp"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:src="@android:drawable/ic_dialog_map"
-                        app:tint="@color/navbar_background"
+                        app:tint="@color/black"
                         android:contentDescription="Ver en Google Maps"/>
                 </LinearLayout>
 

@@ -37,12 +37,20 @@ class activity_usuarioPrincipal : Fragment() {
     }
 
     private fun setupActionButtons(view: View) {
-        // Botón Localizar Evento
+        // Botón Localizar Evento - Actualizado para abrir el mapa normal en Bogotá
         view.findViewById<ImageButton>(R.id.btnLocEveMuser)?.setOnClickListener {
-            val gmmIntentUri = Uri.parse("google.navigation:q=4.6097,-74.0817")
+            // geo:lat,lng?z=zoom_level (z=13 es un buen nivel de ciudad)
+            val gmmIntentUri = Uri.parse("geo:4.6097,-74.0817?z=13")
             val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
             mapIntent.setPackage("com.google.android.apps.maps")
-            startActivity(mapIntent)
+            
+            if (mapIntent.resolveActivity(requireActivity().packageManager) != null) {
+                startActivity(mapIntent)
+            } else {
+                // Alternativa en navegador si no hay app
+                val webIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/maps/@4.6097,-74.0817,13z"))
+                startActivity(webIntent)
+            }
         }
 
         // Botón Pedir Comida
@@ -91,13 +99,12 @@ class activity_usuarioPrincipal : Fragment() {
                             eventosAleatorios[1]
                         )
                     } else {
-                        // Si solo hay uno, ocultamos el segundo panel o mostramos un placeholder
+                        // Si solo hay uno, ocultamos el segundo panel
                         view.findViewById<View>(R.id.cardEvent2)?.visibility = View.INVISIBLE
                     }
                 }
             } catch (e: Exception) {
-                // En caso de error, dejamos los valores por defecto o mostramos un aviso
-                // Toast.makeText(context, "Error al cargar eventos: ${e.message}", Toast.LENGTH_SHORT).show()
+                // Error silencioso
             }
         }
     }
@@ -115,10 +122,8 @@ class activity_usuarioPrincipal : Fragment() {
         tvLocation?.text = evento.lugar
         tvTime?.text = evento.hora
 
-        // Podríamos añadir un listener para ver detalles al tocar la tarjeta
         val card = view.findViewById<View>(resources.getIdentifier("cardEvent$suffix", "id", context?.packageName))
         card?.setOnClickListener {
-            // Lógica para ir a detalles del evento si fuera necesario
             Toast.makeText(context, "Detalles de: ${evento.nombre}", Toast.LENGTH_SHORT).show()
         }
     }

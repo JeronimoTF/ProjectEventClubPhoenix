@@ -1,6 +1,7 @@
 package com.example.projecteventclub.auth.login
 
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -54,9 +55,9 @@ class Login : AppCompatActivity() {
         configurarBiometria()
         configurarVisibilidadHuella()
 
-        // ✅ CONFIGURACIÓN GOOGLE (igual Login 1)
+        // ✅ CONFIGURACIÓN GOOGLE (ID actualizado según google-services.json)
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken("195889917013-vfjdc707d6lu5qauhv50qkrbco945b8a.apps.googleusercontent.com") // ✅ tu client ID
+            .requestIdToken("466200848374-qt4d2huknr18u3uo8f8iap1mhsusgsga.apps.googleusercontent.com") 
             .requestEmail()
             .build()
 
@@ -84,7 +85,7 @@ class Login : AppCompatActivity() {
                     irAPantallaPrincipal()
 
                 } catch (e: Exception) {
-                    Toast.makeText(this@Login, "Error: ${e.message}", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this@Login, "Asegúrete de ingresar tu correo o contraseña correctamente o recupera tu acceso.", Toast.LENGTH_LONG).show()
                 }
             }
         }
@@ -121,7 +122,7 @@ class Login : AppCompatActivity() {
         }
     }
 
-    // ✅ RESULTADO GOOGLE (igual Login 1)
+    // ✅ RESULTADO GOOGLE
     override fun onActivityResult(
         requestCode: Int,
         resultCode: Int,
@@ -251,18 +252,37 @@ class Login : AppCompatActivity() {
     }
 
     private fun existenCredencialesGuardadas(): Boolean {
-        val prefs = getSecurePrefs()
-        return prefs.contains("email") && prefs.contains("pass")
+        return try {
+            val prefs = getSecurePrefs()
+            prefs.contains("email") && prefs.contains("pass")
+        } catch (e: Exception) {
+            false
+        }
     }
 
-    private fun getSecurePrefs() =
-        EncryptedSharedPreferences.create(
-            this,
-            "secret_shared_prefs",
-            MasterKey.Builder(this).setKeyScheme(MasterKey.KeyScheme.AES256_GCM).build(),
-            EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
-            EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
-        )
+    private fun getSecurePrefs(): SharedPreferences {
+        val fileName = "secret_shared_prefs"
+        return try {
+            EncryptedSharedPreferences.create(
+                this,
+                fileName,
+                MasterKey.Builder(this).setKeyScheme(MasterKey.KeyScheme.AES256_GCM).build(),
+                EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
+                EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
+            )
+        } catch (e: Exception) {
+            Log.e("SECURITY_ERROR", "Error inicializando SharedPreferences cifradas. Limpiando datos corruptos.", e)
+            // Si hay un error de cifrado (como AEADBadTagException), borramos el archivo y reintentamos
+            deleteSharedPreferences(fileName)
+            EncryptedSharedPreferences.create(
+                this,
+                fileName,
+                MasterKey.Builder(this).setKeyScheme(MasterKey.KeyScheme.AES256_GCM).build(),
+                EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV,
+                EncryptedSharedPreferences.PrefValueEncryptionScheme.AES256_GCM
+            )
+        }
+    }
 
     // ✅ NAVEGACIÓN
     private fun irAPantallaPrincipal() {

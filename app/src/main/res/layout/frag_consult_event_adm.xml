@@ -20,7 +20,7 @@
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginStart="16dp"
-            android:textColor="@color/navbar_background"/>
+            android:textColor="@color/black"/>
         <ImageView
             android:id="@+id/btnBackConEveAdm"
             android:layout_width="40dp"
@@ -44,7 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/buscar_evento_por_nombre"
-                android:textColor="@color/navbar_background"
+                android:textColor="@color/black"
                 android:textStyle="bold"/>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -58,6 +58,8 @@
                     android:layout_height="50dp"
                     android:layout_weight="1"
                     android:hint="@string/nombre_del_evento"
+                    android:textColor="@color/black"
+                    android:textColorHint="#808080"
                     android:background="@drawable/style_edit_txt"
                     android:paddingStart="12dp"
                     android:inputType="text"/>
@@ -71,13 +73,14 @@
                     app:tint="@color/black"/>
             </LinearLayout>
 
-            <!-- BARRA DE EVENTO SELECCIONADO (Se muestra al encontrar uno) -->
+            <!-- BARRA DE EVENTO SELECCIONADO (Panel Azul Actualizado) -->
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardGestionEvento"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="4dp"
+                app:cardBackgroundColor="@color/navbar_background"
                 android:layout_marginBottom="16dp"
                 android:visibility="gone">
                 <LinearLayout
@@ -93,7 +96,7 @@
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:textAlignment="center"
-                        android:textColor="@color/navbar_background"/>
+                        android:textColor="@color/white"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -115,11 +118,13 @@
                             <ImageView
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
-                                android:src="@android:drawable/ic_menu_view"/>
+                                android:src="@android:drawable/ic_menu_view"
+                                app:tint="@color/white"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/consultar"
+                                android:textColor="@color/white"
                                 android:textSize="10sp"/>
                         </LinearLayout>
 
@@ -136,11 +141,13 @@
                             <ImageView
                                 android:layout_width="30dp"
                                 android:layout_height="30dp"
-                                android:src="@android:drawable/ic_menu_edit"/>
+                                android:src="@android:drawable/ic_menu_edit"
+                                app:tint="@color/white"/>
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Editar"
+                                android:textColor="@color/white"
                                 android:textSize="10sp"/>
                         </LinearLayout>
 
@@ -163,7 +170,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Eliminar"
-                                android:textColor="@color/navbar_background"
+                                android:textColor="#FF0000"
                                 android:textSize="10sp"/>
                         </LinearLayout>
                     </LinearLayout>
@@ -182,6 +189,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Descripción"
+                    android:textColor="@color/black"
                     android:textStyle="bold"
                     android:layout_marginTop="8dp"/>
                 <EditText
@@ -189,6 +197,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:minLines="3"
+                    android:textColor="@color/black"
                     android:background="@drawable/style_edit_txt"
                     android:padding="12dp"
                     android:layout_marginTop="4dp"
@@ -198,12 +207,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Fecha y Hora"
+                    android:textColor="@color/black"
                     android:textStyle="bold"
                     android:layout_marginTop="16dp"/>
                 <EditText
                     android:id="@+id/etDetalleFecha"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
+                    android:textColor="@color/black"
                     android:background="@drawable/style_edit_txt"
                     android:paddingStart="12dp"
                     android:layout_marginTop="4dp"/>
@@ -219,6 +230,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Lugar"
+                        android:textColor="@color/black"
                         android:textStyle="bold"/>
                     <ImageButton
                         android:id="@+id/btnVerEnMapa"
@@ -226,7 +238,7 @@
                         android:layout_height="40dp"
                         android:background="?attr/selectableItemBackgroundBorderless"
                         android:src="@android:drawable/ic_dialog_map"
-                        app:tint="@color/navbar_background"
+                        app:tint="@color/black"
                         android:contentDescription="Ver en Google Maps"/>
                 </LinearLayout>
 
@@ -234,6 +246,7 @@
                     android:id="@+id/etDetalleLugar"
                     android:layout_width="match_parent"
                     android:layout_height="50dp"
+                    android:textColor="@color/black"
                     android:background="@drawable/style_edit_txt"
                     android:paddingStart="12dp"
                     android:layout_marginTop="4dp"/>
@@ -245,7 +258,8 @@
                     android:layout_marginTop="24dp"
                     android:text="GUARDAR CAMBIOS"
                     android:visibility="gone"
-                    android:backgroundTint="@color/navbar_background"/>
+                    android:backgroundTint="@color/navbar_background"
+                    android:textColor="@android:color/white"/>
             </LinearLayout>
 
         </LinearLayout>

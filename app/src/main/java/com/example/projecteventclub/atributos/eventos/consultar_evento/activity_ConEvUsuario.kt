@@ -86,14 +86,16 @@ class activity_ConEvUsuario : Fragment() {
     }
 
     private fun abrirGoogleMaps(ubicacion: String) {
-        val gmmIntentUri = Uri.parse("geo:0,0?q=$ubicacion")
+        // Se centra en Bogotá (4.6097, -74.0817) y busca el lugar sin iniciar navegación
+        val gmmIntentUri = Uri.parse("geo:4.6097,-74.0817?q=$ubicacion")
         val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
         mapIntent.setPackage("com.google.android.apps.maps")
         
         if (mapIntent.resolveActivity(requireActivity().packageManager) != null) {
             startActivity(mapIntent)
         } else {
-            val webIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/maps/search/?api=1&query=$ubicacion"))
+            // Alternativa en web centrada en Bogotá
+            val webIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.google.com/maps/search/?api=1&query=$ubicacion&center=4.6097,-74.0817"))
             startActivity(webIntent)
         }
     }

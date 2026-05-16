@@ -3,6 +3,7 @@ package com.example.projecteventclub
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -12,6 +13,8 @@ import androidx.core.content.ContextCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import coil.load
+import coil.transform.CircleCropTransformation
 import com.example.projecteventclub.atributos.comida.Activity_comidas
 import com.example.projecteventclub.atributos.experiencia.inicio.homeEventFragment
 import com.example.projecteventclub.atributos.pefil.EditarPerfilUsuarioFragment
@@ -33,6 +36,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navView: NavigationView
+    private lateinit var ivFotoToolbar: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,8 +46,17 @@ class MainActivity : AppCompatActivity() {
         drawerLayout = findViewById<DrawerLayout>(R.id.drawer_layout)
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_nav)
         navView = findViewById<NavigationView>(R.id.nav_view)
+        
+        // Vinculamos la imagen de la barra superior con el ID correcto
+        ivFotoToolbar = findViewById(R.id.iv_perfil_toolbar)
 
         setSupportActionBar(toolbar)
+        // ✅ Desactivamos el título por defecto del sistema para evitar que se repita
+        // Y nos aseguramos de que el título esté vacío
+        supportActionBar?.apply {
+            setDisplayShowTitleEnabled(false)
+            title = ""
+        }
 
         val toggle = ActionBarDrawerToggle(
             this, drawerLayout, toolbar,
@@ -53,8 +66,8 @@ class MainActivity : AppCompatActivity() {
         toggle.syncState()
         toggle.drawerArrowDrawable.color = ContextCompat.getColor(this, R.color.white)
 
-        // 1. Consultar el rol y configurar el menú
-        obtenerPerfilYConfigurarMenu()
+        // Cargamos el perfil inicial (rol y foto)
+        obtenerPerfilYConfigurarInterfaz()
 
         cargarFragment(homeEventFragment())
         bottomNav.selectedItemId = R.id.nav_home
@@ -83,8 +96,16 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun obtenerPerfilYConfigurarMenu() {
-        val userId = SupaBaseClient.client.auth.currentUserOrNull()?.id ?: return
+    /**
+     * Permite a los fragmentos solicitar una actualización de la interfaz (como la foto)
+     */
+    fun actualizarInterfaz() {
+        obtenerPerfilYConfigurarInterfaz()
+    }
+
+    private fun obtenerPerfilYConfigurarInterfaz() {
+        val user = SupaBaseClient.client.auth.currentUserOrNull() ?: return
+        val userId = user.id
 
         lifecycleScope.launch {
             try {
@@ -95,13 +116,23 @@ class MainActivity : AppCompatActivity() {
                 }
                 
                 withContext(Dispatchers.Main) {
-                    configurarMenuPorRol(navView.menu, profile?.rol ?: "USER")
+                    if (profile != null) {
+                        configurarMenuPorRol(navView.menu, profile.rol ?: "USER")
+                        
+                        // Cargamos la foto en la barra superior si existe
+                        if (!profile.avatar_url.isNullOrEmpty()) {
+                            ivFotoToolbar.load(profile.avatar_url) {
+                                transformations(CircleCropTransformation())
+                                placeholder(R.drawable.ic_user)
+                                error(R.drawable.ic_user)
+                            }
+                        }
+                    } else {
+                        configurarMenuPorRol(navView.menu, "USER")
+                    }
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
-                withContext(Dispatchers.Main) {
-                    configurarMenuPorRol(navView.menu, "USER")
-                }
             }
         }
     }
@@ -109,13 +140,11 @@ class MainActivity : AppCompatActivity() {
     private fun configurarMenuPorRol(menu: Menu, rol: String) {
         val upperRol = rol.uppercase()
 
-        // Elementos que SIEMPRE deben ser visibles para todos
         menu.findItem(R.id.nav_home)?.isVisible = true
         menu.findItem(R.id.nav_perfilusuario)?.isVisible = true
         menu.findItem(R.id.nav_editarUsuario)?.isVisible = true
         menu.findItem(R.id.nav_logout)?.isVisible = true
 
-        // Diferenciación exacta por rol según requerimiento
         when (upperRol) {
             "ADMIN" -> {
                 menu.findItem(R.id.nav_administrador)?.isVisible = true
@@ -129,13 +158,7 @@ class MainActivity : AppCompatActivity() {
                 menu.findItem(R.id.nav_enventosusuario)?.isVisible = false
                 menu.findItem(R.id.nav_comida)?.isVisible = false
             }
-            "USER", "USUARIO" -> {
-                menu.findItem(R.id.nav_administrador)?.isVisible = false
-                menu.findItem(R.id.nav_anfitrion)?.isVisible = false
-                menu.findItem(R.id.nav_enventosusuario)?.isVisible = true
-                menu.findItem(R.id.nav_comida)?.isVisible = true
-            }
-            else -> { // Por defecto tratamos como usuario
+            else -> {
                 menu.findItem(R.id.nav_administrador)?.isVisible = false
                 menu.findItem(R.id.nav_anfitrion)?.isVisible = false
                 menu.findItem(R.id.nav_enventosusuario)?.isVisible = true

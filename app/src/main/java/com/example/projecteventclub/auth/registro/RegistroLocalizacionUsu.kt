@@ -8,7 +8,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.projecteventclub.R
 import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textfield.MaterialAutoCompleteTextView
 
 class RegistroLocalizacionUsu : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,8 +18,8 @@ class RegistroLocalizacionUsu : AppCompatActivity() {
         val etCelular: TextInputEditText = findViewById(R.id.etCelular)
         val etCorreo: TextInputEditText = findViewById(R.id.etCorreo)
         val etCiudad: TextInputEditText = findViewById(R.id.etCiudadResi)
-        val spLocalidad: MaterialAutoCompleteTextView = findViewById(R.id.spLocalidad)
-        val spBarrio: MaterialAutoCompleteTextView = findViewById(R.id.spBarrio)
+        val etLocalidad: TextInputEditText = findViewById(R.id.etLocalidad)
+        val etBarrio: TextInputEditText = findViewById(R.id.etBarrio)
         val etDireccion: TextInputEditText = findViewById(R.id.etDireccion)
         val btnSig2: Button = findViewById(R.id.btnSiguiente2)
 
@@ -28,8 +27,8 @@ class RegistroLocalizacionUsu : AppCompatActivity() {
             val celular = etCelular.text.toString().trim()
             val correo = etCorreo.text.toString().trim()
             val ciudad = etCiudad.text.toString().trim()
-            val localidad = spLocalidad.text.toString().trim()
-            val barrio = spBarrio.text.toString().trim()
+            val localidad = etLocalidad.text.toString().trim()
+            val barrio = etBarrio.text.toString().trim()
             val direccion = etDireccion.text.toString().trim()
 
             // VALIDACIONES
@@ -54,11 +53,13 @@ class RegistroLocalizacionUsu : AppCompatActivity() {
                 return@setOnClickListener
             }
             if (localidad.isEmpty()) {
-                Toast.makeText(this, "Seleccione una localidad", Toast.LENGTH_SHORT).show()
+                etLocalidad.error = "La localidad es obligatoria"
+                etLocalidad.requestFocus()
                 return@setOnClickListener
             }
             if (barrio.isEmpty()) {
-                Toast.makeText(this, "Seleccione un barrio", Toast.LENGTH_SHORT).show()
+                etBarrio.error = "El barrio es obligatorio"
+                etBarrio.requestFocus()
                 return@setOnClickListener
             }
             if (direccion.isEmpty()) {

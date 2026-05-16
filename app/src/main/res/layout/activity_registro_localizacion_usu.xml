@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:hint="@string/celular"
                 android:layout_marginTop="30sp"
-                android:textColor="@color/navbar_background"
+                android:textColor="@android:color/black"
                 android:textColorHint="@android:color/white"
                 android:inputType="phone" />
 
@@ -52,7 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:hint="@string/correo"
-                android:textColor="@color/navbar_background"
+                android:textColor="@android:color/black"
                 android:textColorHint="@android:color/white"
                 android:inputType="textEmailAddress" />
 
@@ -62,27 +62,29 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:hint="@string/ciudad_de_residencia"
-                android:textColor="@color/navbar_background"
+                android:textColor="@android:color/black"
                 android:textColorHint="@android:color/white"
                 android:inputType="text" />
 
-            <com.google.android.material.textfield.MaterialAutoCompleteTextView
-                android:id="@+id/spLocalidad"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etLocalidad"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:hint="@string/localidad"
-                android:textColor="@color/navbar_background"
-                android:textColorHint="@android:color/white" />
+                android:textColor="@android:color/black"
+                android:textColorHint="@android:color/white"
+                android:inputType="text" />
 
-            <com.google.android.material.textfield.MaterialAutoCompleteTextView
-                android:id="@+id/spBarrio"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etBarrio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:hint="@string/barrio"
-                android:textColor="@color/navbar_background"
-                android:textColorHint="@android:color/white" />
+                android:textColor="@android:color/black"
+                android:textColorHint="@android:color/white"
+                android:inputType="text" />
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etDireccion"
@@ -90,7 +92,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:hint="@string/direcci_n"
-                android:textColor="@color/navbar_background"
+                android:textColor="@android:color/black"
                 android:textColorHint="@android:color/white"
                 android:inputType="text" />
 
